@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educational Content | Redbeards Remedy</title>
+    <meta name="description" content="Learn from 12+ years of intensive legal study and real courtroom practice since 2023. Educational content series showing what works vs. what fails in court.">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'burgundy': '#8B1538',
+                        'gold': '#FFD700',
+                        'charcoal': '#36454F',
+                        'slate-blue': '#6B73FF'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="font-inter bg-gray-50 text-gray-900">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Mobile menu button - positioned absolutely -->
+            <div class="md:hidden absolute left-4 top-4 z-10">
+                <button id="mobile-menu-btn" class="text-charcoal hover:text-burgundy">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center h-20 md:h-16">
+                <!-- Centered Logo -->
+                <div class="flex-shrink-0 flex items-center justify-center w-full md:w-auto mb-2 md:mb-0">
+                    <a href="index.html" class="flex items-center">
+                        <img src="assets/images/redbeard-logo.png" alt="Redbeards Remedy Logo" class="h-12 w-12 mr-3">
+                        <span class="text-xl font-bold text-charcoal">Redbeards Remedy</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation - Centered -->
+                <div class="hidden md:flex items-center justify-center space-x-6 w-full">
+                    <a href="index.html" class="nav-link text-charcoal hover:text-burgundy font-medium">Home</a>
+                    <a href="index.html#about" class="nav-link text-charcoal hover:text-burgundy font-medium">About</a>
+                    <a href="education.html" class="nav-link text-burgundy font-bold">Education</a>
+                    <a href="index.html#reality-check" class="nav-link text-charcoal hover:text-burgundy font-medium">Reality Check</a>
+                    <a href="content-gallery.html" class="nav-link text-charcoal hover:text-burgundy font-medium">Content Gallery</a>
+                    <a href="resources.html" class="nav-link text-charcoal hover:text-burgundy font-medium">Resources</a>
+                    <a href="index.html#contact" class="nav-link text-charcoal hover:text-burgundy font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Home</a>
+                <a href="index.html#about" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">About</a>
+                <a href="education.html" class="mobile-nav-link block px-3 py-2 text-burgundy font-bold">Education</a>
+                <a href="index.html#reality-check" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Reality Check</a>
+                <a href="content-gallery.html" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Content Gallery</a>
+                <a href="resources.html" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Resources</a>
+                <a href="index.html#contact" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 md:pt-16 bg-gradient-to-br from-burgundy to-charcoal text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    Educational Content Series
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
+                    12+ years of intensive study with real courtroom practice since 2023, teaching the difference between effective law and failed theories
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Categories -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                
+                <!-- "I Tried It All" Series -->
+                <div class="bg-gradient-to-br from-burgundy to-red-800 text-white p-8 rounded-lg education-card">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-video text-5xl text-gold mb-4"></i>
+                        <h2 class="text-2xl font-bold mb-4">"I Tried It All" Series</h2>
+                        <p class="text-lg opacity-90">
+                            Real documentation of what I studied for 12+ years and tested in court since 2023 with actual results.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white bg-opacity-10 p-4 rounded">
+                            <h4 class="font-semibold mb-2">Episode 1: Legal Fiction Theory</h4>
+                            <p class="text-sm opacity-90">Using actual court transcripts showing complete failure</p>
+                            <div class="mt-2 text-xs bg-gold text-charcoal px-2 py-1 rounded inline-block">Coming Soon</div>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-10 p-4 rounded">
+                            <h4 class="font-semibold mb-2">Episode 2: Maritime Law Claims</h4>
+                            <p class="text-sm opacity-90">"Not boarding the vessel" - completely ignored by judges</p>
+                            <div class="mt-2 text-xs bg-gold text-charcoal px-2 py-1 rounded inline-block">Coming Soon</div>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-10 p-4 rounded">
+                            <h4 class="font-semibold mb-2">Episode 3: Special Visitation</h4>
+                            <p class="text-sm opacity-90">Judge: "Can you define what a special visitation is?"</p>
+                            <div class="mt-2 text-xs bg-gold text-charcoal px-2 py-1 rounded inline-block">Coming Soon</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Constitutional Reality -->
+                <div class="bg-gradient-to-br from-slate-blue to-blue-800 text-white p-8 rounded-lg education-card">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-scroll text-5xl text-gold mb-4"></i>
+                        <h2 class="text-2xl font-bold mb-4">Constitutional Reality</h2>
+                        <p class="text-lg opacity-90">
+                            What actually works: Real constitutional law vs. pseudolegal theories.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white bg-opacity-10 p-4 rounded">
+                            <h4 class="font-semibold mb-2">14th Amendment Applications</h4>
+                            <p class="text-sm opacity-90">Real constitutional protections that courts must recognize</p>
+                            <div class="mt-2 text-xs bg-gold text-charcoal px-2 py-1 rounded inline-block">Coming Soon</div>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-10 p-4 rounded">
+                            <h4 class="font-semibold mb-2">Due Process Violations</h4>
+                            <p class="text-sm opacity-90">Procedural errors courts actually care about</p>
+                            <div class="mt-2 text-xs bg-gold text-charcoal px-2 py-1 rounded inline-block">Coming Soon</div>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-10 p-4 rounded">
+                            <h4 class="font-semibold mb-2">State Constitutional Protections</h4>
+                            <p class="text-sm opacity-90">Often stronger than federal - and actually enforceable</p>
+                            <div class="mt-2 text-xs bg-gold text-charcoal px-2 py-1 rounded inline-block">Coming Soon</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Transcript Analysis -->
+                <div class="bg-gradient-to-br from-charcoal to-gray-800 text-white p-8 rounded-lg education-card">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-file-alt text-5xl text-gold mb-4"></i>
+                        <h2 class="text-2xl font-bold mb-4">Transcript Analysis</h2>
+                        <p class="text-lg opacity-90">
+                            Line-by-line breakdown of real court interactions and judge responses.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-white bg-opacity-10 p-4 rounded">
+                            <h4 class="font-semibold mb-2">Judge Dismisses "Legal Fiction"</h4>
+                            <p class="text-sm opacity-90">"I don't know what you refer to when you say legal fiction"</p>
+                            <div class="mt-2 text-xs bg-gold text-charcoal px-2 py-1 rounded inline-block">Coming Soon</div>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-10 p-4 rounded">
+                            <h4 class="font-semibold mb-2">Article I vs Article III Confusion</h4>
+                            <p class="text-sm opacity-90">How this argument was completely ignored</p>
+                            <div class="mt-2 text-xs bg-gold text-charcoal px-2 py-1 rounded inline-block">Coming Soon</div>
+                        </div>
+                        
+                        <div class="bg-white bg-opacity-10 p-4 rounded">
+                            <h4 class="font-semibold mb-2">What Judges Actually Respond To</h4>
+                            <p class="text-sm opacity-90">Real constitutional arguments vs. pseudolegal theories</p>
+                            <div class="mt-2 text-xs bg-gold text-charcoal px-2 py-1 rounded inline-block">Coming Soon</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Learning Points -->
+            <div class="bg-gray-100 p-8 rounded-lg">
+                <h2 class="text-3xl font-bold text-charcoal mb-8 text-center">Key Learning Points</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-red-700 mb-4 flex items-center">
+                            <i class="fas fa-times-circle mr-3"></i>
+                            What Doesn't Work (Proven in Court)
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Birth Certificate/Trust Theories:</strong>
+                                    <p class="text-gray-600">"Ghost signed stamped papers" have no legal meaning</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>"Legal Fiction" Arguments:</strong>
+                                    <p class="text-gray-600">Judges have no idea what you're talking about</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Maritime/Admiralty Law Claims:</strong>
+                                    <p class="text-gray-600">Gold fringe flags mean nothing in criminal court</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Surface-Level Jurisdictional Arguments:</strong>
+                                    <p class="text-gray-600">Without understanding actual jurisdiction</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold text-green-700 mb-4 flex items-center">
+                            <i class="fas fa-check-circle mr-3"></i>
+                            What Actually Works (Court-Tested)
+                        </h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Real Constitutional Rights:</strong>
+                                    <p class="text-gray-600">Actual constitutional law, not pseudo-legal interpretations</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>Due Process Violations:</strong>
+                                    <p class="text-gray-600">Procedural errors courts actually care about</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>State Constitutional Protections:</strong>
+                                    <p class="text-gray-600">Often stronger than federal protections</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                                <div>
+                                    <strong>PA Consolidated Statutes:</strong>
+                                    <p class="text-gray-600">Knowing the actual law, not made-up versions</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real vs Fake Jurisdiction -->
+    <section class="py-20 bg-burgundy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Jurisdictional Misunderstandings Series
+                </h2>
+                <p class="text-xl max-w-3xl mx-auto opacity-90">
+                    The foundation that so many other theories are built on. When people misunderstand jurisdiction, everything else falls apart.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white bg-opacity-10 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-6 text-gold">Common Misconceptions</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-red-500 pl-6">
+                            <h4 class="font-bold text-lg mb-2">"Courts Have No Jurisdiction Over Me"</h4>
+                            <p class="mb-2"><strong>What they believe:</strong> Magic words or documents can remove jurisdiction</p>
+                            <p><strong>What actually happened:</strong> Every single argument was dismissed or ignored</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-red-500 pl-6">
+                            <h4 class="font-bold text-lg mb-2">"I Never Consented to Jurisdiction"</h4>
+                            <p class="mb-2"><strong>What they believe:</strong> Jurisdiction requires consent</p>
+                            <p><strong>What actually happened:</strong> Courts explaining how jurisdiction actually works</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-red-500 pl-6">
+                            <h4 class="font-bold text-lg mb-2">"Admiralty/Maritime Law Claims"</h4>
+                            <p class="mb-2"><strong>What they believe:</strong> Gold fringe flags mean different law applies</p>
+                            <p><strong>What actually happened:</strong> Complete dismissal by judges</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-6 text-gold">Actual Jurisdiction Reality</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-l-4 border-green-500 pl-6">
+                            <h4 class="font-bold text-lg mb-2">Geographic Jurisdiction</h4>
+                            <p>Courts have jurisdiction based on where the alleged offense occurred, not on consent or magic documents.</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-green-500 pl-6">
+                            <h4 class="font-bold text-lg mb-2">Subject Matter Jurisdiction</h4>
+                            <p>Criminal courts have authority over criminal matters within their geographic boundaries.</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-green-500 pl-6">
+                            <h4 class="font-bold text-lg mb-2">Personal Jurisdiction</h4>
+                            <p>Established by your presence in the jurisdiction when the alleged offense occurred.</p>
+                        </div>
+                        
+                        <div class="border-l-4 border-green-500 pl-6">
+                            <h4 class="font-bold text-lg mb-2">Constitutional Challenges</h4>
+                            <p>Real constitutional arguments can challenge how jurisdiction is exercised, not whether it exists.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evolution Timeline -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-6">
+                    12+ Years of Evolution: My Journey (2011-Present)
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    From intensive study (2011-2023) to successful constitutional methods in practice (2023-present).
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="absolute left-4 md:left-1/2 h-full w-1 bg-burgundy transform md:-translate-x-1/2"></div>
+                
+                <!-- Timeline items -->
+                <div class="space-y-12">
+                    <!-- 2011-2014: Early Study Years -->
+                    <div class="relative flex items-center">
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-burgundy rounded-full border-4 border-white transform md:-translate-x-1/2"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pr-8">
+                            <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                                <h3 class="text-xl font-bold text-red-700 mb-2">2011-2014: Popular Theories</h3>
+                                <p class="text-gray-700 mb-3">Started studying birth certificates, trusts, basic jurisdictional arguments</p>
+                                <div class="text-sm text-red-600 font-semibold">Result: Theoretical understanding only</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2015-2019: Deep Dive Research -->
+                    <div class="relative flex items-center">
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-burgundy rounded-full border-4 border-white transform md:-translate-x-1/2"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pl-8 md:ml-auto">
+                            <div class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-lg">
+                                <h3 class="text-xl font-bold text-orange-700 mb-2">2015-2019: Deep Dive Research</h3>
+                                <p class="text-gray-700 mb-3">Intensive study of every sovereign citizen theory, case law, and legal precedents</p>
+                                <div class="text-sm text-orange-600 font-semibold">Result: Discovered fundamental flaws in theories</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2020-2022: Constitutional Discovery -->
+                    <div class="relative flex items-center">
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-burgundy rounded-full border-4 border-white transform md:-translate-x-1/2"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pr-8">
+                            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-lg">
+                                <h3 class="text-xl font-bold text-yellow-700 mb-2">2020-2022: Constitutional Discovery</h3>
+                                <p class="text-gray-700 mb-3">Discovered actual constitutional law, due process, real jurisdictional principles through intensive research</p>
+                                <div class="text-sm text-yellow-600 font-semibold">Result: Developed effective legal strategies</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 2023-Present: Court Practice -->
+                    <div class="relative flex items-center">
+                        <div class="absolute left-0 md:left-1/2 w-8 h-8 bg-burgundy rounded-full border-4 border-white transform md:-translate-x-1/2"></div>
+                        <div class="ml-12 md:ml-0 md:w-1/2 md:pl-8 md:ml-auto">
+                            <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+                                <h3 class="text-xl font-bold text-green-700 mb-2">2023-Present: Constitutional Success</h3>
+                                <p class="text-gray-700 mb-3">Put 12+ years of study into practice - current case using real constitutional arguments causing them problems</p>
+                                <div class="text-sm text-green-600 font-semibold">Result: Theory becomes proven reality</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-charcoal text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Stop Wasting Time With Theories That Don't Work
+            </h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Learn from 12+ years of intensive study and real courtroom experience since 2023. See actual court transcripts. Understand what judges actually respond to.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="index.html#contact" class="bg-gold text-charcoal px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
+                    Get Notified When Content Releases
+                </a>
+                <a href="resources.html" class="border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-charcoal transition-colors">
+                    Browse Resources
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="assets/images/redbeard-logo.png" alt="Redbeards Remedy Logo" class="h-8 w-8 mr-3">
+                        <span class="text-xl font-bold text-white">Redbeards Remedy</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Reality-based legal education from 12+ years of study and real courtroom testing since 2023.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Education</h4>
+                    <ul class="space-y-2">
+                        <li><a href="education.html" class="hover:text-white">Video Series</a></li>
+                        <li><a href="index.html#reality-check" class="hover:text-white">Reality Check</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="legal-disclaimer.html" class="hover:text-white">Disclaimer</a></li>
+                        <li><a href="terms.html" class="hover:text-white">Terms of Use</a></li>
+                        <li><a href="privacy.html" class="hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:support@redbeardremedy.online?subject=Educational%20Content%20Inquiry" class="hover:text-white text-gold font-mono">support@redbeardremedy.online</a></li>
+                        <li><a href="https://www.youtube.com/@golyfetv" target="_blank" class="hover:text-white">YouTube Channel</a></li>
+                        <li><a href="index.html#contact" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    &copy; 2024 Redbeards Remedy. Educational content only - not legal advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Legal Disclaimer Modal -->
+    <div id="disclaimer-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-2xl w-full max-h-96 overflow-y-auto p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold text-charcoal">Legal Disclaimer</h3>
+                <button id="close-disclaimer" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="text-gray-700 space-y-4">
+                <p><strong>IMPORTANT LEGAL NOTICE:</strong></p>
+                <p>This website provides educational content only and does not constitute legal advice. The information presented is based on personal experience and should not be relied upon as professional legal counsel.</p>
+                <p><strong>Not Legal Advice:</strong> Nothing on this website should be construed as legal advice for your specific situation. Always consult with a qualified attorney for legal matters.</p>
+                <p><strong>Educational Purpose:</strong> Content is provided for educational and informational purposes only, sharing real courtroom experiences and legal research.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redbeards Remedy | Legal Education & Constitutional Rights</title>
+    <meta name="description" content="12 years of real courtroom experience teaching the difference between effective constitutional law and failed sovereign citizen tactics. Learn what actually works in court.">
+    <meta name="keywords" content="constitutional law, legal education, courtroom experience, due process, 14th amendment, legal reality">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'burgundy': '#8B1538',
+                        'gold': '#FFD700',
+                        'charcoal': '#36454F',
+                        'slate-blue': '#6B73FF'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="font-inter bg-gray-50 text-gray-900">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Mobile menu button - positioned absolutely -->
+            <div class="md:hidden absolute left-4 top-4 z-10">
+                <button id="mobile-menu-btn" class="text-charcoal hover:text-burgundy">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center h-20 md:h-16">
+                <!-- Centered Logo -->
+                <div class="flex-shrink-0 flex items-center justify-center w-full md:w-auto mb-2 md:mb-0">
+                    <a href="index.html" class="flex items-center logo-container">
+                        <img src="assets/images/redbeard-logo.png" alt="Redbeards Remedy Logo" class="h-12 w-12 mr-3 logo-img">
+                        <span class="text-xl font-bold text-charcoal mobile-logo">Redbeards Remedy</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation - Centered -->
+                <div class="hidden md:flex items-center justify-center space-x-6 w-full">
+                    <a href="#home" class="nav-link text-charcoal hover:text-burgundy font-medium">Home</a>
+                    <a href="#about" class="nav-link text-charcoal hover:text-burgundy font-medium">About</a>
+                    <a href="#education" class="nav-link text-charcoal hover:text-burgundy font-medium">Education</a>
+                    <a href="#reality-check" class="nav-link text-charcoal hover:text-burgundy font-medium">Reality Check</a>
+                    <a href="civil-law-misconceptions.html" class="nav-link text-charcoal hover:text-burgundy font-medium">Civil Law Misconceptions</a>
+                    <a href="content-gallery.html" class="nav-link text-charcoal hover:text-burgundy font-medium">Content Gallery</a>
+                    <a href="resources.html" class="nav-link text-charcoal hover:text-burgundy font-medium">Resources</a>
+                    <a href="#contact" class="nav-link text-charcoal hover:text-burgundy font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Home</a>
+                <a href="#about" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">About</a>
+                <a href="#education" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Education</a>
+                <a href="#reality-check" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Reality Check</a>
+                <a href="civil-law-misconceptions.html" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Civil Law Misconceptions</a>
+                <a href="content-gallery.html" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Content Gallery</a>
+                <a href="resources.html" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Resources</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 md:pt-16 bg-gradient-to-br from-burgundy via-charcoal to-slate-blue text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    Reality-Based Legal Education
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
+                    12+ years of intensive legal study with real courtroom practice since 2023, teaching the difference between effective constitutional law and failed sovereign citizen tactics
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#about" class="bg-gold text-charcoal px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
+                        Learn My Story
+                    </a>
+                    <a href="#education" class="border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-charcoal transition-colors">
+                        Start Learning
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stats Section -->
+        <div class="bg-white bg-opacity-10 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div>
+                        <div class="text-4xl font-bold text-gold mb-2">12+ Years</div>
+                        <div class="text-lg">Legal Study & Research</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-gold mb-2">100%</div>
+                        <div class="text-lg">Real Testing Results</div>
+                    </div>
+                    <div>
+                        <div class="text-4xl font-bold text-gold mb-2">0%</div>
+                        <div class="text-lg">Pseudolegal Theories</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-6">
+                        From Theory to Reality
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        I've walked the path that many are still struggling with. Since 2011, I've studied every theory, every tactic, every pseudolegal argument you can imagine. Starting in 2023, I began testing them in real courtrooms. The results? They don't work.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        But here's what I discovered: <strong>Real constitutional law does work.</strong> The 14th Amendment, due process violations, and legitimate state constitutional protections are powerful tools when properly understood and applied.
+                    </p>
+                    <div class="bg-burgundy bg-opacity-10 p-6 rounded-lg border-l-4 border-burgundy">
+                        <p class="text-lg font-semibold text-charcoal">
+                            "The difference between playing legal games and understanding actual law is the separation of fact from fiction people need to see."
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-gray-100 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-charcoal mb-6">My Journey</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-burgundy text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1">1</div>
+                            <div>
+                                <h4 class="font-semibold text-charcoal">Started with Popular Theories</h4>
+                                <p class="text-gray-600">Birth certificates, trusts, basic jurisdictional arguments</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-burgundy text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1">2</div>
+                            <div>
+                                <h4 class="font-semibold text-charcoal">Real Court Testing Since 2023</h4>
+                                <p class="text-gray-600">Municipal, county, state - documented what works vs. what fails</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-burgundy text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1">3</div>
+                            <div>
+                                <h4 class="font-semibold text-charcoal">Discovered Real Law</h4>
+                                <p class="text-gray-600">Constitutional rights, due process, actual statutory protections</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reality Check Section -->
+    <section id="reality-check" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-6">
+                    Reality Check: What Actually Happened
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    After 12+ years of study and real court testing since 2023, I have the transcripts to prove it. Here's what happens when pseudolegal theories meet real courtrooms.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                <!-- What Doesn't Work -->
+                <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold text-red-800 mb-4 flex items-center">
+                        <i class="fas fa-times-circle mr-3"></i>
+                        What Doesn't Work
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span>"Legal Fiction" arguments - Judge: "I don't know what you refer to when you say legal fiction"</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span>"Special Visitation" claims - Judge: "Can you define what a special visitation is?"</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span>Article I vs Article III court confusion - Completely ignored</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-times text-red-500 mr-3 mt-1"></i>
+                            <span>"Maritime Law" and "Not boarding the vessel" - No recognition whatsoever</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- What Actually Works -->
+                <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+                    <h3 class="text-2xl font-bold text-green-800 mb-4 flex items-center">
+                        <i class="fas fa-check-circle mr-3"></i>
+                        What Actually Works
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <span>Due process violations - Courts must respond to procedural errors</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <span>14th Amendment protections - Real constitutional law</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <span>State constitutional protections - Often stronger than federal</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mr-3 mt-1"></i>
+                            <span>Actual statutory requirements - Knowing the real law</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-burgundy text-white p-8 rounded-lg text-center">
+                <h3 class="text-2xl font-bold mb-4">Delaware County Case Study (2023-Present)</h3>
+                <p class="text-lg mb-4">
+                    <strong>December 31, 2023:</strong> I tried every sovereign citizen argument in the book during a traffic stop. 
+                    Looking back at the video, <em>"it definitely sounded crazy!"</em>
+                </p>
+                <p class="text-lg mb-4">
+                    <strong>2024-Present:</strong> Switched to real constitutional law (4th Amendment violations, due process). 
+                    Now they're "screwing up the case from start to finish."
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="content-gallery.html" class="bg-gold text-charcoal px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors inline-block">
+                        View Court Documents
+                    </a>
+                    <a href="#education" class="border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-burgundy transition-colors inline-block">
+                        Learn the Real Methods
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-6">
+                    Educational Content Series
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Bridge the gap between curiosity about legal concepts and understanding what actually works in court.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Series 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg border hover:shadow-lg transition-shadow">
+                    <div class="bg-burgundy text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-video text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3">
+                        "I Tried It All" Series
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Document what I studied for 12+ years and actually tested in court since 2023. No theories - just facts.
+                    </p>
+                    <div class="text-sm text-burgundy font-semibold">Coming Soon</div>
+                </div>
+
+                <!-- Series 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg border hover:shadow-lg transition-shadow">
+                    <div class="bg-burgundy text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-balance-scale text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3">
+                        "Real vs. Fake Jurisdiction"
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Explain actual jurisdictional law versus the widespread misconceptions in the movement.
+                    </p>
+                    <div class="text-sm text-burgundy font-semibold">Coming Soon</div>
+                </div>
+
+                <!-- Series 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg border hover:shadow-lg transition-shadow">
+                    <div class="bg-burgundy text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-scroll text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3">
+                        "Constitutional Rights That Work"
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Show the difference between real constitutional arguments and pseudolegal interpretations.
+                    </p>
+                    <div class="text-sm text-burgundy font-semibold">Coming Soon</div>
+                </div>
+
+                <!-- Series 4 -->
+                <div class="bg-gray-50 p-6 rounded-lg border hover:shadow-lg transition-shadow">
+                    <div class="bg-burgundy text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-gavel text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3">
+                        "Courtroom Reality Check"
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        What judges actually respond to versus what gets you held in contempt of court.
+                    </p>
+                    <div class="text-sm text-burgundy font-semibold">Coming Soon</div>
+                </div>
+
+                <!-- Series 5 -->
+                <div class="bg-gray-50 p-6 rounded-lg border hover:shadow-lg transition-shadow">
+                    <div class="bg-burgundy text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-timeline text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3">
+                        "12 Years Later: Evolution"
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        The evolution from 12+ years of theory study to successful constitutional methods in practice since 2023.
+                    </p>
+                    <div class="text-sm text-burgundy font-semibold">Coming Soon</div>
+                </div>
+
+                <!-- Series 6 -->
+                <div class="bg-gray-50 p-6 rounded-lg border hover:shadow-lg transition-shadow">
+                    <div class="bg-burgundy text-white w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-file-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-charcoal mb-3">
+                        "Transcript Analysis"
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Real court transcript breakdowns from 2023-present showing exactly how judges respond to different arguments.
+                    </p>
+                    <div class="text-sm text-burgundy font-semibold">Coming Soon</div>
+                </div>
+            </div>
+
+            <!-- Featured Section: Civil Law Misconceptions -->
+            <div class="mt-20 bg-gradient-to-r from-red-600 to-burgundy text-white p-8 rounded-lg">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold mb-4">🚨 URGENT: Civil Law Misconceptions Exposed</h2>
+                    <p class="text-xl opacity-90">
+                        The dangerous misinformation that's getting people arrested every day
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg text-center">
+                        <i class="fas fa-exclamation-triangle text-4xl text-gold mb-3"></i>
+                        <h3 class="text-lg font-bold mb-2">DOT Number Scam</h3>
+                        <p class="text-sm opacity-90">Why getting a DOT number puts you MORE under government control</p>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg text-center">
+                        <i class="fas fa-balance-scale text-4xl text-gold mb-3"></i>
+                        <h3 class="text-lg font-bold mb-2">Cestui Que Vie Backfire</h3>
+                        <p class="text-sm opacity-90">How their trust arguments prove they're IN the trust</p>
+                    </div>
+                    
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg text-center">
+                        <i class="fas fa-gavel text-4xl text-gold mb-3"></i>
+                        <h3 class="text-lg font-bold mb-2">Vexatious Behavior Costs</h3>
+                        <p class="text-sm opacity-90">What really happens when you're "defiant" in court</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-8 space-y-4">
+                    <a href="civil-law-misconceptions.html" class="bg-gold text-charcoal px-8 py-4 rounded-lg font-bold text-lg hover:bg-yellow-400 transition-colors inline-block mr-4">
+                        Expose the Lies →
+                    </a>
+                    <a href="content-gallery.html" class="bg-white text-burgundy border-2 border-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-burgundy hover:text-white transition-colors inline-block">
+                        See Real Court Documents →
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-20 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-charcoal mb-6">
+                    Legal Resources
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Legitimate legal resources and constitutional law references you can actually use.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold text-charcoal mb-3">Constitutional Law</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-burgundy">14th Amendment Resources</a></li>
+                        <li><a href="#" class="hover:text-burgundy">Due Process Violations</a></li>
+                        <li><a href="#" class="hover:text-burgundy">State Constitutional Protections</a></li>
+                        <li><a href="#" class="hover:text-burgundy">Bill of Rights Applications</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold text-charcoal mb-3">Court Procedures</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-burgundy">Proper Court Filings</a></li>
+                        <li><a href="#" class="hover:text-burgundy">Procedural Requirements</a></li>
+                        <li><a href="#" class="hover:text-burgundy">Appeals Process</a></li>
+                        <li><a href="#" class="hover:text-burgundy">Evidence Standards</a></li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold text-charcoal mb-3">State Law References</h3>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><a href="#" class="hover:text-burgundy">PA Consolidated Statutes</a></li>
+                        <li><a href="#" class="hover:text-burgundy">State Court Rules</a></li>
+                        <li><a href="#" class="hover:text-burgundy">Municipal Codes</a></li>
+                        <li><a href="#" class="hover:text-burgundy">Traffic Law Reality</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-burgundy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Ready to Learn Real Law?
+            </h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Stop wasting time with theories that don't work. Learn from 12+ years of intensive study and real courtroom experience since 2023.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <button onclick="openEmailContact('Constitutional Law Education Inquiry')" class="bg-gold text-charcoal px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
+                    Get Started Today
+                </button>
+                <a href="#education" class="border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-charcoal transition-colors">
+                    Browse Education
+                </a>
+            </div>
+            
+            <!-- Contact Information -->
+            <div class="bg-white bg-opacity-10 rounded-lg p-6 max-w-2xl mx-auto">
+                <h3 class="text-xl font-bold mb-4 text-gold">Contact Information</h3>
+                <div class="space-y-3 text-lg">
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-envelope mr-3 text-gold"></i>
+                        <span class="font-mono">support@redbeardremedy.online</span>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <i class="fas fa-globe mr-3 text-gold"></i>
+                        <span>redbeardremedy.online</span>
+                    </div>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white border-opacity-20">
+                    <p class="text-sm opacity-80">
+                        <strong>Note:</strong> Educational content only - not legal advice. 
+                        For questions about constitutional law education, copy the email address above.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="assets/images/redbeard-logo.png" alt="Redbeards Remedy Logo" class="h-8 w-8 mr-3">
+                        <span class="text-xl font-bold text-white">Redbeards Remedy</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Reality-based legal education from 12+ years of study and real courtroom testing since 2023.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Education</h4>
+                    <ul class="space-y-2">
+                        <li><a href="education.html" class="hover:text-white">Video Series</a></li>
+                        <li><a href="civil-law-misconceptions.html" class="hover:text-white">Civil Law Misconceptions</a></li>
+                        <li><a href="content-gallery.html" class="hover:text-white">Content Gallery</a></li>
+                        <li><a href="#reality-check" class="hover:text-white">Reality Check</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="legal-disclaimer.html" class="hover:text-white">Disclaimer</a></li>
+                        <li><a href="terms.html" class="hover:text-white">Terms of Use</a></li>
+                        <li><a href="privacy.html" class="hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><button onclick="openEmailContact('Email from Footer')" class="hover:text-white text-gold font-mono text-left">support@redbeardremedy.online</button></li>
+                        <li><a href="https://www.youtube.com/@golyfetv" target="_blank" class="hover:text-white">YouTube Channel</a></li>
+                        <li><button onclick="openEmailContact('Website Contact Form')" class="hover:text-white text-left">Contact Form</button></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    &copy; 2024 Redbeards Remedy. Educational content only - not legal advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Legal Disclaimer Modal -->
+    <div id="disclaimer-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-2xl w-full max-h-96 overflow-y-auto p-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-2xl font-bold text-charcoal">Legal Disclaimer</h3>
+                <button id="close-disclaimer" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="text-gray-700 space-y-4">
+                <p><strong>IMPORTANT LEGAL NOTICE:</strong></p>
+                <p>This website provides educational content only and does not constitute legal advice. The information presented is based on personal experience and should not be relied upon as professional legal counsel.</p>
+                <p><strong>Not Legal Advice:</strong> Nothing on this website should be construed as legal advice for your specific situation. Always consult with a qualified attorney for legal matters.</p>
+                <p><strong>Educational Purpose:</strong> Content is provided for educational and informational purposes only, sharing real courtroom experiences and legal research.</p>
+                <p><strong>No Attorney-Client Relationship:</strong> Use of this website does not create an attorney-client relationship.</p>
+                <p><strong>Jurisdiction Specific:</strong> Laws vary by jurisdiction. Information may not apply to your specific location or circumstances.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Email Contact Function -->
+    <script>
+        function openEmailContact(subject) {
+            // Skip mailto entirely and go straight to modal
+            const email = 'support@redbeardremedy.online';
+            showEmailModal(email, subject);
+        }
+        
+        function showEmailModal(email, subject) {
+            // Create modal HTML
+            const modalHTML = `
+                <div id="email-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center p-4">
+                    <div class="bg-white rounded-lg max-w-lg w-full p-8 shadow-2xl">
+                        <div class="flex justify-between items-center mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-burgundy text-2xl mr-3"></i>
+                                <h3 class="text-2xl font-bold text-charcoal">Contact Redbeards Remedy</h3>
+                            </div>
+                            <button onclick="closeEmailModal()" class="text-gray-500 hover:text-gray-700">
+                                <i class="fas fa-times text-xl"></i>
+                            </button>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-lg text-gray-700 mb-4">Copy the email address below and paste it into your email client:</p>
+                            <div class="bg-gradient-to-r from-burgundy to-red-600 p-1 rounded-lg mb-4">
+                                <div class="bg-gold bg-opacity-20 p-4 rounded">
+                                    <p class="text-2xl font-mono font-bold text-charcoal select-all">${email}</p>
+                                </div>
+                            </div>
+                            <div class="bg-blue-50 p-3 rounded-lg mb-4">
+                                <p class="text-sm text-blue-700"><strong>Suggested Subject:</strong> ${subject}</p>
+                            </div>
+                            <div class="flex gap-3 justify-center">
+                                <button onclick="copyEmail('${email}')" class="bg-burgundy text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-800 transition-colors flex items-center">
+                                    <i class="fas fa-copy mr-2"></i>
+                                    Copy Email Address
+                                </button>
+                                <button onclick="tryMailto('${email}', '${subject}')" class="bg-gold text-charcoal px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors flex items-center">
+                                    <i class="fas fa-external-link-alt mr-2"></i>
+                                    Try Email Client
+                                </button>
+                            </div>
+                            <button onclick="closeEmailModal()" class="mt-4 text-gray-500 hover:text-gray-700 underline">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Add modal to page
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+        
+        function tryMailto(email, subject) {
+            // This gives users the option to try mailto if they want
+            const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+            window.location.href = mailtoLink;
+        }
+        
+        function copyEmail(email) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(email).then(() => {
+                    // Update the button to show success
+                    const copyBtn = event.target.closest('button');
+                    const originalHTML = copyBtn.innerHTML;
+                    copyBtn.innerHTML = '<i class="fas fa-check mr-2"></i>Copied!';
+                    copyBtn.className = 'bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors flex items-center';
+                    
+                    setTimeout(() => {
+                        copyBtn.innerHTML = originalHTML;
+                        copyBtn.className = 'bg-burgundy text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-800 transition-colors flex items-center';
+                    }, 2000);
+                }).catch(() => {
+                    fallbackCopy(email);
+                });
+            } else {
+                fallbackCopy(email);
+            }
+        }
+        
+        function fallbackCopy(email) {
+            const textArea = document.createElement('textarea');
+            textArea.value = email;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                alert('Email address copied to clipboard!');
+            } catch (err) {
+                // Select the email text for manual copying
+                const emailElement = document.querySelector('.select-all');
+                if (emailElement && window.getSelection) {
+                    const selection = window.getSelection();
+                    const range = document.createRange();
+                    range.selectNodeContents(emailElement);
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                    alert('Email address selected. Press Ctrl+C (or Cmd+C on Mac) to copy.');
+                } else {
+                    alert('Please manually copy: ' + email);
+                }
+            }
+            document.body.removeChild(textArea);
+        }
+        
+        function closeEmailModal() {
+            const modal = document.getElementById('email-modal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+    </script>
+</body>
+</html>

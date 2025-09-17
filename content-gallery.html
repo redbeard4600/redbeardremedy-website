@@ -1,0 +1,2134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Gallery | Redbeards Remedy</title>
+    <meta name="description" content="Court transcripts, legal documents, and educational content from 12+ years of study and real courtroom experience.">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'burgundy': '#8B1538',
+                        'gold': '#FFD700',
+                        'charcoal': '#36454F',
+                        'slate-blue': '#6B73FF'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="font-inter bg-gray-50 text-gray-900">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Mobile menu button - positioned absolutely -->
+            <div class="md:hidden absolute left-4 top-4 z-10">
+                <button id="mobile-menu-btn" class="text-charcoal hover:text-burgundy">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center h-20 md:h-16">
+                <!-- Centered Logo -->
+                <div class="flex-shrink-0 flex items-center justify-center w-full md:w-auto mb-2 md:mb-0">
+                    <a href="index.html" class="flex items-center">
+                        <img src="assets/images/redbeard-logo.png" alt="Redbeards Remedy Logo" class="h-12 w-12 mr-3">
+                        <span class="text-xl font-bold text-charcoal">Redbeards Remedy</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation - Centered -->
+                <div class="hidden md:flex items-center justify-center space-x-6 w-full">
+                    <a href="index.html" class="nav-link text-charcoal hover:text-burgundy font-medium">Home</a>
+                    <a href="index.html#about" class="nav-link text-charcoal hover:text-burgundy font-medium">About</a>
+                    <a href="education.html" class="nav-link text-charcoal hover:text-burgundy font-medium">Education</a>
+                    <a href="content-gallery.html" class="nav-link text-burgundy font-bold">Content Gallery</a>
+                    <a href="resources.html" class="nav-link text-charcoal hover:text-burgundy font-medium">Resources</a>
+                    <a href="index.html#contact" class="nav-link text-charcoal hover:text-burgundy font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Home</a>
+                <a href="index.html#about" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">About</a>
+                <a href="education.html" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Education</a>
+                <a href="content-gallery.html" class="mobile-nav-link block px-3 py-2 text-burgundy font-bold">Content Gallery</a>
+                <a href="resources.html" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Resources</a>
+                <a href="index.html#contact" class="mobile-nav-link block px-3 py-2 text-charcoal hover:text-burgundy">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 md:pt-16 bg-gradient-to-br from-burgundy to-charcoal text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    Content Gallery
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto opacity-90">
+                    Real court transcripts, legal documents, and educational materials from 12+ years of research
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="filterContent('all')" class="bg-gold text-charcoal px-6 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors filter-btn active">
+                        All Content
+                    </button>
+                    <button onclick="filterContent('transcripts')" class="border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-charcoal transition-colors filter-btn">
+                        Court Transcripts
+                    </button>
+                    <button onclick="filterContent('documents')" class="border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-charcoal transition-colors filter-btn">
+                        Legal Documents
+                    </button>
+                    <button onclick="filterContent('images')" class="border-2 border-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-charcoal transition-colors filter-btn">
+                        Images & Media
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Grid -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Search Bar -->
+            <div class="mb-12 text-center">
+                <div class="max-w-md mx-auto">
+                    <input type="search" id="content-search" placeholder="Search content..." 
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-burgundy focus:border-transparent">
+                </div>
+            </div>
+
+            <!-- Content Grid -->
+            <div id="content-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- EXAMPLE CONTENT ITEMS - Replace with your actual content -->
+                
+                <!-- Court Transcript Example -->
+                <div class="content-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-category="transcripts" data-search="legal fiction court transcript judge response">
+                    <div class="bg-burgundy text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            "Legal Fiction" Court Transcript
+                        </h3>
+                        <p class="text-sm opacity-90 mt-1">Real judge response to sovereign citizen argument</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded">Failed Theory</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2 py-1 rounded ml-1">Court Transcript</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Judge: "I don't know of what you refer to when you say legal fiction..." - 
+                            Complete failure of sovereign citizen legal fiction argument.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Date: 12/31/2023</span>
+                            <button onclick="openModal('transcript1')" class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
+                                View Full Transcript
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Legal Document Example -->
+                <div class="content-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-category="documents" data-search="constitutional motion due process 14th amendment">
+                    <div class="bg-slate-blue text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fas fa-scroll mr-2"></i>
+                            Constitutional Motion Template
+                        </h3>
+                        <p class="text-sm opacity-90 mt-1">Real constitutional argument that works</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">Effective Method</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded ml-1">Legal Document</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Properly formatted constitutional motion using 14th Amendment protections 
+                            and due process violations that courts must address.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Type: PDF Template</span>
+                            <button onclick="downloadContent('constitutional-motion.pdf')" class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
+                                <i class="fas fa-download mr-1"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Example -->
+                <div class="content-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" data-category="images" data-search="court filing evidence constitutional law">
+                    <div class="bg-charcoal text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fas fa-image mr-2"></i>
+                            Court Filing Evidence
+                        </h3>
+                        <p class="text-sm opacity-90 mt-1">Actual court documents showing results</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded">Evidence</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded ml-1">Image</span>
+                        </div>
+                        <div class="bg-gray-100 h-32 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-image text-4xl text-gray-400"></i>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Redacted court filing showing constitutional arguments being accepted 
+                            and processed by the court system.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Format: JPG/PNG</span>
+                            <button onclick="openModal('image1')" class="bg-charcoal text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors">
+                                View Image
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CASE STUDY: Delaware County Traffic Stop -->
+                <div class="content-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow col-span-1 md:col-span-2 lg:col-span-3" 
+                     data-category="transcripts" 
+                     data-search="delaware county traffic stop sovereign citizen failure gun range bmw constitutional violations">
+                    <div class="bg-gradient-to-r from-red-600 to-burgundy text-white p-6">
+                        <h3 class="text-2xl font-bold flex items-center mb-2">
+                            <i class="fas fa-car mr-3"></i>
+                            CASE STUDY: Delaware County Traffic Stop (12/31/2023)
+                        </h3>
+                        <p class="text-lg opacity-90">Real-world example: From sovereign citizen failure to constitutional success</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="bg-red-200 text-red-800 text-xs font-medium px-3 py-1 rounded">Sovereign Citizen Failure</span>
+                            <span class="bg-yellow-200 text-yellow-800 text-xs font-medium px-3 py-1 rounded">Constitutional Violations</span>
+                            <span class="bg-blue-200 text-blue-800 text-xs font-medium px-3 py-1 rounded">Ongoing Case</span>
+                            <span class="bg-green-200 text-green-800 text-xs font-medium px-3 py-1 rounded">Learning Experience</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6">
+                            <p class="text-yellow-800 font-semibold">
+                                <i class="fas fa-info-circle mr-2"></i>
+                                <strong>Educational Purpose:</strong> This case shows the evolution from pseudolegal theories to constitutional law that actually works.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800 mb-3">The Scenario</h4>
+                                <ul class="text-gray-600 space-y-2 text-sm">
+                                    <li>• Returning from Delaware gun range</li>
+                                    <li>• Traveling through Delaware County, PA</li>
+                                    <li>• Concealed firearm in tactical bag (legal carry)</li>
+                                    <li>• Heavily tinted 2010 BMW 750Li</li>
+                                    <li>• Trooper initiated traffic stop</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800 mb-3">What I Did Wrong</h4>
+                                <ul class="text-gray-600 space-y-2 text-sm">
+                                    <li>• "I'm not a US Citizen" (nonsense)</li>
+                                    <li>• "You don't have authority to stop me" (false)</li>
+                                    <li>• Various sovereign citizen arguments</li>
+                                    <li>• Sounded crazy (my own assessment)</li>
+                                    <li>• Framed valid points completely wrong</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-red-50 border border-red-200 p-4 mb-6 rounded">
+                            <h4 class="text-lg font-bold text-red-800 mb-2">Consequences of Pseudolegal Approach</h4>
+                            <ul class="text-red-700 space-y-1 text-sm">
+                                <li>• Forcibly removed from vehicle</li>
+                                <li>• Unlawful obstruction of justice charge</li>
+                                <li>• Unlawful search and seizure (4th Amendment violation)</li>
+                                <li>• Vehicle towed</li>
+                                <li>• Arrested and processed</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 border border-green-200 p-4 mb-6 rounded">
+                            <h4 class="text-lg font-bold text-green-800 mb-2">Constitutional Issues Present</h4>
+                            <ul class="text-green-700 space-y-1 text-sm">
+                                <li>• 4th Amendment search and seizure violations</li>
+                                <li>• Due process violations in charging</li>
+                                <li>• Possible 2nd Amendment implications</li>
+                                <li>• Procedural errors in arrest process</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 border border-blue-200 p-4 mb-6 rounded">
+                            <h4 class="text-lg font-bold text-blue-800 mb-2">Documents Available</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <p class="font-semibold mb-2">Court Documents:</p>
+                                    <ul class="text-blue-700 space-y-1">
+                                        <li>• Magisterial District Judge Docket Sheet</li>
+                                        <li>• Criminal Complaint</li>
+                                        <li>• Search Warrant Application</li>
+                                        <li>• Case Status Information</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="font-semibold mb-2">Video Evidence (Coming Soon):</p>
+                                    <ul class="text-blue-700 space-y-1">
+                                        <li>• Personal camera footage</li>
+                                        <li>• Police dashcam/MVR footage</li>
+                                        <li>• Traffic stop interaction</li>
+                                        <li>• Search and arrest sequence</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div class="text-sm text-gray-500">
+                                <p><strong>Date:</strong> December 31, 2023</p>
+                                <p><strong>Jurisdiction:</strong> Delaware County, PA</p>
+                                <p><strong>Status:</strong> Ongoing case - Constitutional approach</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="openModal('delaware-case-study')" 
+                                        class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
+                                    <i class="fas fa-eye mr-1"></i> View Case Details
+                                </button>
+                                <button onclick="downloadContent('griffin-docket-sheet-original.pdf')" 
+                                        class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
+                                    <i class="fas fa-download mr-1"></i> Docket Sheet
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document: Docket Sheet -->
+                <div class="content-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" 
+                     data-category="documents" 
+                     data-search="docket sheet griffin delaware county magistrate court criminal">
+                    <div class="bg-charcoal text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            Magistrate Docket Sheet
+                        </h3>
+                        <p class="text-sm opacity-90 mt-1">MJ-32136-CR-0000421-2023 - Judge David R. Griffin</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2 py-1 rounded">Court Document</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded ml-1">Redacted</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded ml-1">Watermarked</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Official magistrate court docket showing case progression from initial 
+                            charges through preliminary hearings. Documents the initial failure of 
+                            sovereign citizen approach.
+                        </p>
+                        <div class="bg-gray-100 h-32 rounded-lg flex items-center justify-center mb-4 relative">
+                            <i class="fas fa-file-pdf text-4xl text-gray-400"></i>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-30">
+                                <img src="assets/images/redbeard-logo.png" alt="Watermark" class="h-16 w-16 opacity-50">
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Format: PDF (Redacted)</span>
+                            <button onclick="downloadContent('griffin-docket-sheet-original.pdf')" 
+                                    class="bg-charcoal text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors">
+                                <i class="fas fa-download mr-1"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Document: Criminal Complaint & Warrant -->
+                <div class="content-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" 
+                     data-category="documents" 
+                     data-search="criminal complaint search warrant delaware county state police">
+                    <div class="bg-burgundy text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fas fa-scroll mr-2"></i>
+                            Criminal Complaint & Search Warrant
+                        </h3>
+                        <p class="text-sm opacity-90 mt-1">PA State Police - Incident PA2023-1698459</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded">Criminal Complaint</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded ml-1">Search Warrant</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded ml-1">Redacted</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Official criminal complaint and search warrant application showing the 
+                            charges filed and justification for vehicle search. Reveals potential 
+                            4th Amendment violations.
+                        </p>
+                        <div class="bg-gray-100 h-32 rounded-lg flex items-center justify-center mb-4 relative">
+                            <i class="fas fa-file-pdf text-4xl text-gray-400"></i>
+                            <div class="absolute inset-0 flex items-center justify-center opacity-30">
+                                <img src="assets/images/redbeard-logo.png" alt="Watermark" class="h-16 w-16 opacity-50">
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Format: PDF (Redacted)</span>
+                            <button onclick="downloadContent('criminal-complaint-redacted.pdf')" 
+                                    class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
+                                <i class="fas fa-download mr-1"></i> Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Preliminary Hearing Experience -->
+                <div class="content-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" 
+                     data-category="case-studies" 
+                     data-search="preliminary hearing judge griffin sovereign citizen youtube university delaware county competency eval venue defect">
+                    <div class="bg-burgundy text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fas fa-gavel mr-2"></i>
+                            Preliminary Hearing: YouTube University vs. Reality
+                        </h3>
+                        <p class="text-sm opacity-90 mt-1">Judge Griffin - January 18, 2024</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded">Reality Check</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded ml-1">Sovereign Citizen Tactics</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded ml-1">Court Transcript</span>
+                        </div>
+                        
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            <strong>Real courtroom testing of popular sovereign citizen tactics</strong> from YouTube University. 
+                            Watch what happens when "I don't understand" meets Judge Griffin's courtroom reality.
+                        </p>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-burgundy mb-3">🎭 The Performance vs. Reality:</h4>
+                            <div class="grid md:grid-cols-2 gap-4 text-sm">
+                                <div>
+                                    <p class="font-semibold mb-2 text-red-600">What YouTube Taught:</p>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• "I don't understand" = don't stand under authority</li>
+                                        <li>• Stay at your chair, don't approach the bar</li>
+                                        <li>• Demand the "charging instrument"</li>
+                                        <li>• Request "injured party" for corpus delicti</li>
+                                        <li>• Cite Title 42 Section 1983</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <p class="font-semibold mb-2 text-green-600">What Actually Happened:</p>
+                                    <ul class="text-gray-600 space-y-1">
+                                        <li>• Judge saw vexatious behavior</li>
+                                        <li>• Courtroom disruption concerns</li>
+                                        <li>• Competency evaluation ordered</li>
+                                        <li>• Case transferred for "balance"</li>
+                                        <li>• Administrative violations occurred</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-slate-blue mb-3">⚖️ Legal Reality Check:</h4>
+                            <div class="text-sm space-y-2">
+                                <p><strong>PA Rule 600 Speedy Trial:</strong> 180 days if incarcerated, 365 days if not - Clock running since December 31, 2023</p>
+                                <p><strong>Administrative Violations:</strong> No written order for competency eval, no transfer order (venue defect, not jurisdictional)</p>
+                                <p><strong>Section 1983 Claim:</strong> Valid statute, but what grounds? Judge exercising lawful authority?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div class="text-sm text-gray-500">
+                                <p><strong>Date:</strong> January 18, 2024</p>
+                                <p><strong>Judge:</strong> David R. Griffin, Magistrate</p>
+                                <p><strong>Outcome:</strong> Competency eval ordered, case transferred</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="openModal('preliminary-hearing-reality')" 
+                                        class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
+                                    <i class="fas fa-eye mr-1"></i> Full Transcript
+                                </button>
+                                <button onclick="downloadContent('preliminary-hearing-notes.pdf')" 
+                                        class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
+                                    <i class="fas fa-download mr-1"></i> Case Notes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Judge Holefelder Arraignment -->
+                <div class="content-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" 
+                     data-category="case-studies" 
+                     data-search="arraignment holefelder bond 75000 title 42 section 1983 color of law understand authority">
+                    <div class="bg-charcoal text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fas fa-balance-scale mr-2"></i>
+                            Arraignment: The $75K "I Don't Understand" Bond
+                        </h3>
+                        <p class="text-sm opacity-90 mt-1">Judge Diane M. Holefelder - January 2024</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded">Sovereign Tactics</span>
+                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded ml-1">YouTube University</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded ml-1">Section 1983</span>
+                        </div>
+                        
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            <strong>The classic "I don't understand" performance</strong> at arraignment - allegedly meaning you don't 
+                            "stand under their authority." Then citing Title 42 Section 1983 for "depriving rights under color of law."
+                        </p>
+                        
+                        <div class="bg-red-50 p-4 rounded-lg mb-4 border-l-4 border-red-500">
+                            <h4 class="font-bold text-red-700 mb-2">🤔 The Critical Questions:</h4>
+                            <div class="text-sm text-red-600 space-y-2">
+                                <p><strong>Valid statute, wrong application:</strong> Section 1983 is real, but...</p>
+                                <p><strong>What grounds?</strong> Judge exercising lawful judicial authority?</p>
+                                <p><strong>Color of law?</strong> She's literally acting within her official capacity</p>
+                                <p><strong>Rights deprived?</strong> Setting bond per statutory authority</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-gray-700 mb-3">📝 What Really Happened:</h4>
+                            <div class="text-sm space-y-2">
+                                <p><strong>The Exchange:</strong> "Do you understand the charges?" → "No, I don't understand. I'm placing you on notice of Title 42 Section 1983!"</p>
+                                <p><strong>The Result:</strong> $75,000 bond set (released 3 days later, January 3rd, 2024)</p>
+                                <p><strong>Speedy Trial Clock:</strong> Started ticking from arrest date per PA Rule 600</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div class="text-sm text-gray-500">
+                                <p><strong>Bond Amount:</strong> $75,000</p>
+                                <p><strong>Released:</strong> January 3, 2024 (3 days later)</p>
+                                <p><strong>Status:</strong> Preliminary hearing scheduled</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="openModal('arraignment-experience')" 
+                                        class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
+                                    <i class="fas fa-eye mr-1"></i> Full Analysis
+                                </button>
+                                <button onclick="downloadContent('arraignment-transcript.pdf')" 
+                                        class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
+                                    <i class="fas fa-download mr-1"></i> Court Record
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Holefelder Docket Sheet - Case Progression -->
+                <div class="content-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" 
+                     data-category="documents" 
+                     data-search="holefelder docket sheet case progression continuances commitment canceled delaware county">
+                    <div class="bg-slate-blue text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fas fa-file-alt mr-2"></i>
+                            Holefelder MDJ Docket Sheet - Case Progression
+                        </h3>
+                        <p class="text-sm opacity-90 mt-1">MJ-32238-CR-0000404-2023 - Judge Diane M. Holefelder</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">Court Document</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded ml-1">Case Progression</span>
+                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded ml-1">7 Continuances</span>
+                        </div>
+                        
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            <strong>Complete docket history</strong> showing the case transferred back to Judge Holefelder after the Griffin competency eval order. 
+                            Documents 7 continuances before formal arraignment and the infamous "commitment canceled" incident.
+                        </p>
+                        
+                        <div class="bg-red-50 p-4 rounded-lg mb-4 border-l-4 border-red-500">
+                            <h4 class="font-bold text-red-700 mb-2">🚨 Key Events Documented:</h4>
+                            <div class="text-sm space-y-2">
+                                <p><strong>3/27 - "Commitment Canceled":</strong> Judge put defendant in custody for allegedly not complying with competency eval order</p>
+                                <p><strong>7 Continuances:</strong> Multiple rescheduling before getting to preliminary hearing</p>
+                                <p><strong>Transfer Back:</strong> Case returned from Griffin to Holefelder jurisdiction</p>
+                                <p><strong>Charges:</strong> F1 Prohibited Firearm Possession, F3 Unlicensed Carry, M2 Obstruct, Resist Arrest, Traffic violations</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-blue-700 mb-3">📋 Docket Analysis:</h4>
+                            <div class="text-sm space-y-1">
+                                <p>• <strong>Original Arrest:</strong> December 31, 2023</p>
+                                <p>• <strong>Case Number:</strong> MJ-32238-CR-0000404-2023</p>
+                                <p>• <strong>Final Hearing:</strong> August 28, 2024</p>
+                                <p>• <strong>Speedy Trial Implications:</strong> Multiple continuances extending timeline</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div class="text-sm text-gray-500">
+                                <p><strong>Court:</strong> Magisterial District 32-2-38</p>
+                                <p><strong>Judge:</strong> Diane M. Holefelder</p>
+                                <p><strong>Status:</strong> Complete docket progression</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="openModal('holefelder-docket-analysis')" 
+                                        class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
+                                    <i class="fas fa-eye mr-1"></i> Full Analysis
+                                </button>
+                                <button onclick="downloadContent('Holefelder_MdjDocketSheet.pdf')" 
+                                        class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
+                                    <i class="fas fa-download mr-1"></i> View Docket
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- August 28th Preliminary Hearing Transcripts -->
+                <div class="content-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" 
+                     data-category="transcripts" 
+                     data-search="august 28 2024 preliminary hearing transcripts holefelder pro se constitutional rights">
+                    <div class="bg-burgundy text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fas fa-scroll mr-2"></i>
+                            August 28, 2024 - Preliminary Hearing Transcripts
+                        </h3>
+                        <p class="text-sm opacity-90 mt-1">The Evolution from Sovereign Citizen to Constitutional Law</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">Court Transcript</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded ml-1">Pro Se Defense</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded ml-1">Constitutional Rights</span>
+                        </div>
+                        
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            <strong>Official court transcripts</strong> from the preliminary hearing showing the evolution from YouTube University 
+                            tactics to actual constitutional law understanding. Demonstrates progress from pseudolegal theories to real legal procedure.
+                        </p>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg mb-4 border-l-4 border-green-500">
+                            <h4 class="font-bold text-green-700 mb-2">📈 Evolution Documented:</h4>
+                            <div class="text-sm space-y-2">
+                                <p><strong>Before:</strong> "I'm the living man, that's a corporate entity" (YouTube nonsense)</p>
+                                <p><strong>After:</strong> Proper constitutional arguments and procedural understanding</p>
+                                <p><strong>Result:</strong> Avoided incarceration while maintaining right to self-representation</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-yellow-700 mb-3">⚖️ Key Transcript Highlights:</h4>
+                            <div class="text-sm space-y-1">
+                                <p>• Constitutional right to self-defense properly asserted</p>
+                                <p>• Procedural motions filed (though disregarded for the record)</p>
+                                <p>• Pro se representation maintained despite PD pressure</p>
+                                <p>• Court acknowledged constitutional understanding</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-blue-700 mb-2">🎯 Learning Outcomes:</h4>
+                            <p class="text-sm">
+                                Shows what happens when you transition from sovereign citizen theater to actual constitutional law. 
+                                The paperwork got disregarded, but the constitutional arguments had to be respected.
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div class="text-sm text-gray-500">
+                                <p><strong>Date:</strong> August 28, 2024, 9:04 AM</p>
+                                <p><strong>Location:</strong> Aston, PA - MDJ 32-2-38</p>
+                                <p><strong>Representation:</strong> Pro Se (Self-Represented)</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="openModal('august-28-transcript')" 
+                                        class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
+                                    <i class="fas fa-eye mr-1"></i> Key Excerpts
+                                </button>
+                                <button onclick="downloadContent('Transcripts_from_8-28-2024.pdf')" 
+                                        class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
+                                    <i class="fas fa-download mr-1"></i> Full Transcript
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- February 24, 2025 - Grazier Hearing with Judge Brennan -->
+                <div class="content-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" 
+                     data-category="transcripts" 
+                     data-search="february 24 2025 grazier hearing brennan waiver counsel pro se rights on record transcript">
+                    <div class="bg-green-600 text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fas fa-gavel mr-2"></i>
+                            February 24, 2025 - Proper Grazier Hearing
+                        </h3>
+                        <p class="text-sm opacity-90 mt-1">Judge Brennan Establishes Rights "On The Record"</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded">Court Transcript</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded ml-1">Grazier Hearing</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded ml-1">Pro Se Rights</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded ml-1">Waiver of Counsel</span>
+                        </div>
+                        
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            <strong>Official court transcript</strong> from the February 24, 2025 Grazier hearing where Judge Mary Alice Brennan 
+                            conducted a proper waiver of counsel hearing, establishing pro se rights "ON THE RECORD" - demonstrating the 
+                            importance of proper legal procedure versus YouTube University misconceptions.
+                        </p>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg mb-4 border-l-4 border-green-500">
+                            <h4 class="font-bold text-green-700 mb-2">⚖️ Proper Grazier Hearing Conducted:</h4>
+                            <div class="text-sm space-y-2">
+                                <p><strong>Knowing Waiver:</strong> Judge ensured waiver of counsel was "knowing and intelligible"</p>
+                                <p><strong>On The Record:</strong> All rights and waivers properly established in the court record</p>
+                                <p><strong>Pro Se Acknowledged:</strong> Court and prosecution acknowledged defendant's pro se rights</p>
+                                <p><strong>Proper Procedure:</strong> Textbook example of how Grazier hearings should be conducted</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4 border-l-4 border-blue-500">
+                            <h4 class="font-bold text-blue-700 mb-3">🎓 Educational Significance:</h4>
+                            <div class="text-sm space-y-1">
+                                <p>• <strong>Record Establishment:</strong> Shows importance of establishing rights "on the record"</p>
+                                <p>• <strong>Pro Se Terminology:</strong> Debunks YouTube guru myth about avoiding "pro se" term</p>
+                                <p>• <strong>Constitutional Procedure:</strong> Demonstrates proper 6th Amendment waiver process</p>
+                                <p>• <strong>Judicial Competence:</strong> Example of judge following proper constitutional procedure</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-yellow-700 mb-2">🚨 YouTube University Myth BUSTED:</h4>
+                            <p class="text-sm">
+                                <strong>Gurus teach:</strong> "Don't say 'pro se' - it gives them jurisdiction! Use 'in propria persona' or 'sui juris'"<br>
+                                <strong>Reality:</strong> Court acknowledged "pro se rights" with no jurisdictional issues. The archaic Latin terms are unnecessary theater that makes you look foolish in modern courts.
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div class="text-sm text-gray-500">
+                                <p><strong>Date:</strong> February 24, 2025</p>
+                                <p><strong>Court:</strong> Delaware County Court of Common Pleas</p>
+                                <p><strong>Judge:</strong> Hon. Mary Alice Brennan</p>
+                                <p><strong>Representation:</strong> Pro Se (Properly Established)</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="openModal('grazier-hearing-2025')" 
+                                        class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
+                                    <i class="fas fa-eye mr-1"></i> Key Excerpts
+                                </button>
+                                <button onclick="downloadContent('Grazier_Hearing_Transcript_2-24-2025.pdf')" 
+                                        class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
+                                    <i class="fas fa-download mr-1"></i> Full Transcript
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commitment Canceled Incident -->
+                <div class="content-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" 
+                     data-category="case-studies" 
+                     data-search="commitment canceled march 27 custody holefelder competency eval delaware county judicial abuse">
+                    <div class="bg-red-600 text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fas fa-handcuffs mr-2"></i>
+                            "Commitment Canceled" - March 27th Custody Incident
+                        </h3>
+                        <p class="text-sm opacity-90 mt-1">When Judges Act Outside Their Authority</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded">Judicial Overreach</span>
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded ml-1">Constitutional Violation</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded ml-1">Due Process</span>
+                        </div>
+                        
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            <strong>March 27th hearing documentation</strong> where Judge Holefelder put defendant in custody claiming 
+                            "non-compliance with competency evaluation order" - then released him an hour later after realizing the overreach.
+                        </p>
+                        
+                        <div class="bg-red-50 p-4 rounded-lg mb-4 border-l-4 border-red-500">
+                            <h4 class="font-bold text-red-700 mb-2">🚨 What Happened:</h4>
+                            <div class="text-sm space-y-2">
+                                <p><strong>Custody Order:</strong> Judge immediately put defendant in back when he arrived</p>
+                                <p><strong>Claimed Reason:</strong> "Didn't comply with Griffin's competency eval order"</p>
+                                <p><strong>Real Reason:</strong> Courtroom full, didn't want public exchange</p>
+                                <p><strong>Resolution:</strong> Released one hour later, no legal basis for detention</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-yellow-700 mb-3">⚖️ Legal Issues:</h4>
+                            <div class="text-sm space-y-2">
+                                <p><strong>No Legal Basis:</strong> No warrant, no violation, no contempt finding</p>
+                                <p><strong>Due Process Violation:</strong> Detention without proper hearing</p>
+                                <p><strong>Judicial Intimidation:</strong> Using custody threat to control defendant</p>
+                                <p><strong>Delaware County Pattern:</strong> Aggressive judicial behavior in one of Pennsylvania's most procedurally strict jurisdictions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-green-700 mb-2">📈 Significance:</h4>
+                            <p class="text-sm">
+                                First time seeing this level of judicial overreach challenged in Delaware County, one of Pennsylvania's most procedurally strict jurisdictions. 
+                                Shows progress in understanding constitutional rights even while still learning procedure.
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div class="text-sm text-gray-500">
+                                <p><strong>Date:</strong> March 27, 2024</p>
+                                <p><strong>Duration:</strong> Approximately 1 hour in custody</p>
+                                <p><strong>Result:</strong> "Commitment Canceled" on docket</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="openModal('commitment-canceled-analysis')" 
+                                        class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
+                                    <i class="fas fa-eye mr-1"></i> Legal Analysis
+                                </button>
+                                <button onclick="downloadContent('commitment-canceled-motion.pdf')" 
+                                        class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
+                                    <i class="fas fa-download mr-1"></i> Motion Filed
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Common Pleas Court Progression - Judge Brennan -->
+                <div class="content-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" 
+                     data-category="documents" 
+                     data-search="brennan common pleas court progression docket sheet big dogs media delaware county">
+                    <div class="bg-gold text-charcoal p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fas fa-university mr-2"></i>
+                            Common Pleas Court - Judge Brennan Docket Progression
+                        </h3>
+                        <p class="text-sm opacity-90 mt-1">CP-23-CR-0003711-2024 - The "Big Dogs" Court in Media, PA</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded">Common Pleas</span>
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded ml-1">Multiple Continuances</span>
+                            <span class="bg-red-100 text-red-800 text-xs font-medium px-2 py-1 rounded ml-1">Bench Warrant</span>
+                        </div>
+                        
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            <strong>Complete docket from Common Pleas Court</strong> showing the case progression from Judge Holefelder's 
+                            September 3, 2024 holdover through Judge Brennan's "Big Dogs" courthouse in Media, PA. Documents multiple 
+                            continuances, bench warrant incident, and voluntary surrender.
+                        </p>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg mb-4 border-l-4 border-purple-500">
+                            <h4 class="font-bold text-purple-700 mb-2">🏛️ The Transition: Magistrate → Common Pleas</h4>
+                            <div class="text-sm space-y-2">
+                                <p><strong>August 28, 2024:</strong> Judge Holefelder at end of preliminary: "Either participate or sit in the gallery"</p>
+                                <p><strong>September 3, 2024:</strong> First appearance scheduled in Brennan's Common Pleas Court</p>
+                                <p><strong>The Reality:</strong> From small magistrate courtroom to the "Big Dogs" courthouse in Media, PA</p>
+                                <p><strong>Judge Brennan's First Words:</strong> "Get a lawyer" - immediately rescheduled for 10/11/24</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-yellow-700 mb-3">📅 Timeline of Events:</h4>
+                            <div class="text-sm space-y-1">
+                                <p>• <strong>9/3/24:</strong> Holefelder holds case over for Common Pleas</p>
+                                <p>• <strong>First Brennan appearance:</strong> Immediate lawyer order, rescheduled to 10/11/24</p>
+                                <p>• <strong>Multiple continuances...</strong> (detailed in docket)</p>
+                                <p>• <strong>January 2025:</strong> Philly traffic stop (DOT plate again!) - missed 1/18/25 court date</p>
+                                <p>• <strong>Bench warrant issued:</strong> Failure to appear</p>
+                                <p>• <strong>Voluntary surrender:</strong> Turned self in, warrant lifted immediately</p>
+                                <p>• <strong>New date set:</strong> February 24, 2025</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-red-50 p-4 rounded-lg mb-4 border-l-4 border-red-500">
+                            <h4 class="font-bold text-red-700 mb-2">🚨 The Philly Incident - DOT Plate Strikes Again!</h4>
+                            <p class="text-sm text-red-600">
+                                <strong>January 2025:</strong> Philadelphia police traffic stop - still had that "dumb nonsense DOT plate" 
+                                on the car from unrelated incident. Missed court on Monday (1/18/25), bench warrant issued, 
+                                but voluntary surrender resulted in immediate warrant lift.
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div class="text-sm text-gray-500">
+                                <p><strong>Court:</strong> Court of Common Pleas, Delaware County</p>
+                                <p><strong>Judge:</strong> Brennan</p>
+                                <p><strong>Status:</strong> Active case, next date 2/24/25</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="openModal('common-pleas-progression')" 
+                                        class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
+                                    <i class="fas fa-eye mr-1"></i> Full Analysis
+                                </button>
+                                <button onclick="downloadContent('Brennan_CpDocketSheet.pdf')" 
+                                        class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
+                                    <i class="fas fa-download mr-1"></i> View Docket
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Holefelder Holdover Decision -->
+                <div class="content-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow" 
+                     data-category="case-studies" 
+                     data-search="holefelder holdover september 3 2024 participate gallery common pleas magistrate decision">
+                    <div class="bg-charcoal text-white p-4">
+                        <h3 class="text-lg font-bold flex items-center">
+                            <i class="fas fa-arrow-up mr-2"></i>
+                            September 3, 2024 - Holefelder's Holdover Decision
+                        </h3>
+                        <p class="text-sm opacity-90 mt-1">"Either Participate or Sit in the Gallery"</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="mb-4">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2 py-1 rounded">Magistrate Decision</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2 py-1 rounded ml-1">Case Elevation</span>
+                            <span class="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded ml-1">Preliminary Complete</span>
+                        </div>
+                        
+                        <p class="text-gray-700 mb-4 leading-relaxed">
+                            <strong>The moment of elevation</strong> from magistrate to Common Pleas Court. After the August 28th preliminary 
+                            hearing, Judge Holefelder gives the ultimate choice: participate in their system or observe from the gallery.
+                        </p>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-blue-700 mb-2">🎭 The Moment:</h4>
+                            <div class="font-mono text-sm bg-white p-3 rounded border">
+                                <p><strong>JUDGE HOLEFELDER:</strong> "Either participate or sit in the gallery"</p>
+                                <p><strong>RESULT:</strong> Case held over for Common Pleas Court</p>
+                                <p><strong>DEFENDANT'S THOUGHT:</strong> "I thought I was doing something, lmao" 😂</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-green-700 mb-3">⚖️ Legal Significance:</h4>
+                            <div class="text-sm space-y-2">
+                                <p><strong>Preliminary Hearing Complete:</strong> Evidence sufficient to hold for trial</p>
+                                <p><strong>Jurisdictional Transfer:</strong> From summary to felony court level</p>
+                                <p><strong>Pro Se Acknowledgment:</strong> Court recognizes self-representation choice</p>
+                                <p><strong>Constitutional Rights:</strong> Participate or observe - defendant's choice</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-yellow-700 mb-2">🎯 What This Actually Meant:</h4>
+                            <p class="text-sm">
+                                Judge Holefelder was essentially saying: "You've made your choice to represent yourself. 
+                                Now the big court will deal with you." The case surviving nearly a year at magistrate level 
+                                with constitutional challenges means it goes to the "Big Dogs" court.
+                            </p>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                            <div class="text-sm text-gray-500">
+                                <p><strong>Date:</strong> September 3, 2024</p>
+                                <p><strong>Decision:</strong> Case held over for Common Pleas</p>
+                                <p><strong>Next Level:</strong> Judge Brennan, Media PA</p>
+                            </div>
+                            <div class="flex gap-2">
+                                <button onclick="openModal('holefelder-holdover')" 
+                                        class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
+                                    <i class="fas fa-eye mr-1"></i> Full Context
+                                </button>
+                                <button onclick="downloadContent('holdover-order.pdf')" 
+                                        class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
+                                    <i class="fas fa-download mr-1"></i> Court Order
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ADD MORE CONTENT ITEMS HERE -->
+                
+            </div>
+
+            <!-- No Results Message -->
+            <div id="no-results" class="hidden text-center py-12">
+                <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
+                <h3 class="text-2xl font-bold text-gray-600 mb-2">No Content Found</h3>
+                <p class="text-gray-500">Try adjusting your search terms or filter selection.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Upload Instructions for Admin -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-burgundy text-white p-8 rounded-lg">
+                <h2 class="text-3xl font-bold mb-6 flex items-center">
+                    <i class="fas fa-upload mr-3"></i>
+                    Content Upload Instructions
+                </h2>
+                <div class="space-y-4">
+                    <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                        <h3 class="text-xl font-bold mb-3">How to Add Your Content:</h3>
+                        <ol class="space-y-3 list-decimal list-inside">
+                            <li><strong>Create /assets/ folder</strong> in your website directory</li>
+                            <li><strong>Upload files</strong> to appropriate subfolders:
+                                <ul class="ml-6 mt-2 space-y-1 list-disc list-inside">
+                                    <li>/assets/transcripts/ - Court transcript PDFs</li>
+                                    <li>/assets/documents/ - Legal documents and templates</li>
+                                    <li>/assets/images/ - Photos, screenshots, evidence</li>
+                                    <li>/assets/videos/ - MP4 files or YouTube links</li>
+                                </ul>
+                            </li>
+                            <li><strong>Copy existing content item templates</strong> in the HTML</li>
+                            <li><strong>Update the details:</strong> title, description, file paths, categories</li>
+                            <li><strong>Add proper search keywords</strong> in data-search attribute</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="bg-gold text-charcoal p-4 rounded">
+                        <p class="font-semibold">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            <strong>Pro Tip:</strong> Use clear, descriptive filenames and always include 
+                            proper legal disclaimers with sensitive court documents.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals for Content Display -->
+    <div id="content-modal" class="fixed inset-0 bg-black bg-opacity-75 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full" style="max-height: 90vh; overflow-y: auto;">
+            <div class="flex justify-between items-center p-6 border-b">
+                <h3 id="modal-title" class="text-2xl font-bold text-charcoal">Content Title</h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div id="modal-content" class="p-6">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="assets/images/redbeard-logo.png" alt="Redbeards Remedy Logo" class="h-8 w-8 mr-3">
+                        <span class="text-xl font-bold text-white">Redbeards Remedy</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Reality-based legal education from 12+ years of study and real courtroom testing since 2023.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Education</h4>
+                    <ul class="space-y-2">
+                        <li><a href="education.html" class="hover:text-white">Video Series</a></li>
+                        <li><a href="content-gallery.html" class="hover:text-white">Content Gallery</a></li>
+                        <li><a href="resources.html" class="hover:text-white">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="legal-disclaimer.html" class="hover:text-white">Disclaimer</a></li>
+                        <li><a href="terms.html" class="hover:text-white">Terms of Use</a></li>
+                        <li><a href="privacy.html" class="hover:text-white">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:support@redbeardremedy.online?subject=Content%20Gallery%20Question" class="hover:text-white text-gold font-mono">support@redbeardremedy.online</a></li>
+                        <li><a href="https://www.youtube.com/@golyfetv" target="_blank" class="hover:text-white">YouTube Channel</a></li>
+                        <li><a href="index.html#contact" class="hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    &copy; 2024 Redbeards Remedy. Educational content only - not legal advice.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Content Gallery JavaScript -->
+    <script>
+        // Content filtering functionality
+        function filterContent(category) {
+            const items = document.querySelectorAll('.content-item');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update button states
+            buttons.forEach(btn => btn.classList.remove('active', 'bg-gold', 'text-charcoal'));
+            event.target.classList.add('active', 'bg-gold', 'text-charcoal');
+            
+            // Filter content
+            items.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            checkNoResults();
+        }
+
+        // Search functionality
+        document.getElementById('content-search').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const items = document.querySelectorAll('.content-item');
+            
+            items.forEach(item => {
+                const searchData = item.dataset.search.toLowerCase();
+                const title = item.querySelector('h3').textContent.toLowerCase();
+                
+                if (searchData.includes(searchTerm) || title.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            checkNoResults();
+        });
+
+        // Check if no results to show message
+        function checkNoResults() {
+            const visibleItems = document.querySelectorAll('.content-item[style*="display: block"], .content-item:not([style*="display: none"])');
+            const noResults = document.getElementById('no-results');
+            
+            if (visibleItems.length === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+            }
+        }
+
+        // Modal functionality
+        function openModal(contentId) {
+            const modal = document.getElementById('content-modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+            
+            // Delaware County Case Study
+            if (contentId === 'delaware-case-study') {
+                title.textContent = 'Delaware County Traffic Stop - Complete Case Analysis';
+                content.innerHTML = `
+                    <div class="prose max-w-none">
+                        <div class="bg-red-50 border-l-4 border-red-500 p-6 mb-8">
+                            <p class="text-red-800 font-semibold mb-2">
+                                <strong>Educational Disclaimer:</strong> This case study shows real consequences of pseudolegal advice.
+                            </p>
+                            <p class="text-red-700">
+                                All documents are redacted and watermarked. This is educational content only - not legal advice.
+                            </p>
+                        </div>
+                        
+                        <h3>Case Background: December 31, 2023</h3>
+                        
+                        <div class="bg-blue-50 p-6 rounded-lg mb-6">
+                            <h4 class="text-lg font-bold text-blue-800 mb-3">The Setup</h4>
+                            <ul class="text-blue-700 space-y-2">
+                                <li><strong>Location:</strong> Returning from Delaware gun range to PA</li>
+                                <li><strong>Vehicle:</strong> 2010 BMW 750Li with heavy tint</li>
+                                <li><strong>Firearm:</strong> Legally carried, concealed in green tactical bag</li>
+                                <li><strong>Officer:</strong> PA State Trooper Nicholas Peroni</li>
+                                <li><strong>Mindset:</strong> Full sovereign citizen mode (mistake!)</li>
+                            </ul>
+                        </div>
+                        
+                        <h4>What I Said (The Cringe Part)</h4>
+                        <div class="bg-gray-50 p-4 rounded font-mono text-sm mb-6">
+                            <p class="text-red-600 mb-2"><strong>Me:</strong> "I'm not a US Citizen"</p>
+                            <p class="text-red-600 mb-2"><strong>Me:</strong> "I'm not an enemy to the United States"</p>
+                            <p class="text-red-600 mb-2"><strong>Me:</strong> "You don't have the authority to stop me and pull me over"</p>
+                            <p class="text-gray-600 italic">...and various other sovereign citizen nonsense</p>
+                        </div>
+                        
+                        <div class="bg-yellow-50 border border-yellow-200 p-6 mb-6 rounded">
+                            <h4 class="text-lg font-bold text-yellow-800 mb-3">My Own Assessment</h4>
+                            <p class="text-yellow-700">
+                                "Looking back on it now, watching the video myself, <strong>it definitely sounded crazy!</strong> 
+                                Some of those things, to a certain extent were valid, however, I was framing it all wrong."
+                            </p>
+                        </div>
+                        
+                        <h4>What Happened Next</h4>
+                        <div class="bg-red-50 p-4 rounded mb-6">
+                            <ol class="text-red-700 space-y-2 list-decimal list-inside">
+                                <li>Officer approached vehicle and ripped me out</li>
+                                <li>Placed in handcuffs</li>
+                                <li>Charged with obstruction of justice (<strong>unlawful charge</strong>)</li>
+                                <li>Arrested and placed in front of police vehicle</li>
+                                <li>Unlawful search of vehicle (<strong>4th Amendment violation</strong>)</li>
+                                <li>Found the legally carried firearm</li>
+                                <li>Vehicle towed</li>
+                                <li>Transported and processed</li>
+                            </ol>
+                        </div>
+                        
+                        <h4>Constitutional Violations Identified</h4>
+                        <div class="bg-green-50 p-6 rounded mb-6">
+                            <ul class="text-green-700 space-y-2">
+                                <li><strong>4th Amendment:</strong> Unlawful search and seizure of vehicle</li>
+                                <li><strong>Due Process:</strong> Improper obstruction of justice charge</li>
+                                <li><strong>Procedural Errors:</strong> Multiple violations of proper arrest procedure</li>
+                                <li><strong>2nd Amendment:</strong> Potential implications regarding legal firearm carry</li>
+                            </ul>
+                        </div>
+                        
+                        <h4>The Evolution: From Pseudolegal to Constitutional</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div class="bg-red-50 p-4 rounded">
+                                <h5 class="font-bold text-red-800 mb-2">December 2023: Pseudolegal Approach</h5>
+                                <ul class="text-red-700 text-sm space-y-1">
+                                    <li>• Sovereign citizen arguments</li>
+                                    <li>• "Not a US Citizen" claims</li>
+                                    <li>• Denial of court authority</li>
+                                    <li>• Result: Arrest, charges, problems</li>
+                                </ul>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded">
+                                <h5 class="font-bold text-green-800 mb-2">2024-Present: Constitutional Approach</h5>
+                                <ul class="text-green-700 text-sm space-y-1">
+                                    <li>• Real 4th Amendment violations</li>
+                                    <li>• Due process challenges</li>
+                                    <li>• Procedural error identification</li>
+                                    <li>• Result: "Screwing up the case from start to finish"</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-burgundy text-white p-6 rounded text-center">
+                            <h4 class="text-xl font-bold mb-2">The Learning Experience</h4>
+                            <p class="mb-4">
+                                This case perfectly demonstrates why pseudolegal theories fail and 
+                                why constitutional law actually works when properly applied.
+                            </p>
+                            <p class="text-gold font-semibold">
+                                From sounding "crazy" to causing them procedural problems - that's the power of real law!
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (contentId === 'preliminary-hearing-reality') {
+                title.textContent = 'January 18, 2024 - Judge Griffin Preliminary Hearing';
+                content.innerHTML = `
+                    <div class="max-w-none">
+                        <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+                            <strong>⚖️ Legal Reality Check:</strong>
+                            <div class="mt-2 text-sm space-y-1">
+                                <p><strong>PA Rule 600 Speedy Trial:</strong> 180 days if incarcerated, 365 days if not - Clock running since December 31, 2023</p>
+                                <p><strong>Administrative Violations:</strong> No written order for competency eval, no transfer order (venue defect, not jurisdictional)</p>
+                                <p><strong>Section 1983 Claim:</strong> Valid statute, but what grounds? Judge exercising lawful authority?</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4 flex items-center">
+                            <i class="fas fa-scroll mr-2"></i>
+                            📋 Court Proceeding - January 18, 2024
+                        </h4>
+                        
+                        <div class="bg-gray-50 border-l-4 border-gray-400 p-4 mb-4">
+                            <h5 class="font-bold mb-2">Actual Transcript Excerpt:</h5>
+                            <div class="bg-white border rounded p-3 font-mono text-sm space-y-1 leading-relaxed">
+                                <p><strong>DEFENDANT:</strong> "I request the charging instrument for my inspection and verification."</p>
+                                <p><strong>JUDGE:</strong> [Doesn't give it, reads it on record instead]</p>
+                                <p><strong>JUDGE:</strong> "Approach the bar."</p>
+                                <p><strong>DEFENDANT:</strong> [Stays at chair like YouTube said]</p>
+                                <p><strong>DEFENDANT:</strong> "Is it not true that in a criminal proceeding, one has the right to question the nature and cause of an action brought against them? And doesn't that party have to be a live injured person?"</p>
+                                <p><strong>JUDGE:</strong> "Yes."</p>
+                                <p><strong>DEFENDANT:</strong> "Can this court please provide an injured party on its behalf?"</p>
+                                <p><strong>TROOPER PERONI:</strong> [Raises hand]</p>
+                                <p><strong>JUDGE GRIFFIN:</strong> [Looks at trooper like "you damn idiot"] "Mr. Roach, you're NOT going to turn my courtroom into a fiasco!"</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                            <h5 class="font-bold mb-2">Compare to Traffic Stop Transcript (December 31, 2023):</h5>
+                            <div class="bg-white border rounded p-3 font-mono text-xs space-y-1">
+                                <p><strong>DEFENDANT:</strong> "The appearance of the legal fiction...the corporate entity"</p>
+                                <p><strong>DEFENDANT:</strong> "I'm not Melvin Andrew Roach Jr., I'm Melvin...I'm the living man"</p>
+                                <p><strong>DEFENDANT:</strong> "That's the corporate fiction"</p>
+                                <p><strong>JUDGE:</strong> "I don't know of what you refer to when you say legal fiction"</p>
+                                <p><strong>JUDGE:</strong> "What I have in my possession is a certificate of birth of a Melvin Andrew Roach, Jr. That is what I have in my possession"</p>
+                                <p class="text-red-600 font-bold"><strong>Result:</strong> Complete dismissal of legal fiction theory. Judge had no idea what the defendant was talking about.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
+                            <h4 class="font-bold text-red-700 mb-3 flex items-center">
+                                <i class="fas fa-exclamation-triangle mr-2"></i>
+                                🚨 CRITICAL ADMINISTRATIVE VIOLATIONS
+                            </h4>
+                            
+                            <div class="space-y-3">
+                                <div class="border-l-4 border-red-500 pl-3">
+                                    <p class="font-semibold text-red-700">Missing Court Transcripts</p>
+                                    <p class="text-sm text-red-600 mb-1">Official transcripts from January 18, 2024 Griffin hearing NOT preserved by court.</p>
+                                    <div class="text-xs text-red-600 bg-red-100 p-2 rounded">
+                                        <p><strong>Legal Authority:</strong></p>
+                                        <ul class="ml-4 space-y-1">
+                                            <li>• <strong>Pa.R.Crim.P. 117</strong> - Record of proceedings must be made</li>
+                                            <li>• <strong>42 Pa.C.S. § 5505</strong> - Stenographic notes and transcripts preservation</li>
+                                            <li>• <strong>Pa.R.A.P. 1922</strong> - Transcript requirements for appeals</li>
+                                            <li>• <strong>Compare in your jurisdiction:</strong> Most states have similar record preservation requirements</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="border-l-4 border-red-500 pl-3">
+                                    <p class="font-semibold text-red-700">No Written Competency Evaluation Order</p>
+                                    <p class="text-sm text-red-600 mb-1">Judge Griffin ordered competency eval without required written order.</p>
+                                    <div class="text-xs text-red-600 bg-red-100 p-2 rounded">
+                                        <p><strong>Legal Authority:</strong></p>
+                                        <ul class="ml-4 space-y-1">
+                                            <li>• <strong>Pa.R.Crim.P. 570</strong> - Mental examination procedures</li>
+                                            <li>• <strong>18 Pa.C.S. § 314</strong> - Mental incapacity as defense</li>
+                                            <li>• <strong>Compare:</strong> Federal Rule 12.2, similar state rules require written orders</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="border-l-4 border-red-500 pl-3">
+                                    <p class="font-semibold text-red-700">Improper Case Transfer</p>
+                                    <p class="text-sm text-red-600 mb-1">Case transferred without proper transfer order - creates venue defect.</p>
+                                    <div class="text-xs text-red-600 bg-red-100 p-2 rounded">
+                                        <p><strong>Legal Authority:</strong></p>
+                                        <ul class="ml-4 space-y-1">
+                                            <li>• <strong>Pa.R.Crim.P. 132</strong> - Transfer of proceedings</li>
+                                            <li>• <strong>Pa.R.Crim.P. 109</strong> - Venue in criminal cases</li>
+                                            <li>• <strong>Note:</strong> Venue defect ≠ Jurisdictional defect (waivable vs. non-waivable)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4 mb-6">
+                            <h5 class="font-bold text-burgundy mb-3">📚 YouTube University Claims vs. Real Law</h5>
+                            
+                            <div class="grid gap-3">
+                                <div class="border border-yellow-300 rounded-lg overflow-hidden">
+                                    <div class="bg-yellow-100 p-3 border-b border-yellow-300">
+                                        <h6 class="font-bold text-yellow-800">🎓 Claim: "I don't understand" = don't stand under authority</h6>
+                                    </div>
+                                    <div class="bg-red-50 p-3">
+                                        <p class="text-sm font-semibold text-red-700 mb-2">⚖️ Legal Reality:</p>
+                                        <ul class="text-xs text-red-600 space-y-1">
+                                            <li>• <strong>Pa.R.Crim.P. 590</strong> - Court must ensure defendant understands charges</li>
+                                            <li>• <strong>Boykin v. Alabama (1969)</strong> - Understanding required for valid pleas</li>
+                                            <li>• <strong>Result:</strong> Claiming you don't understand triggers competency evaluation, not jurisdictional challenge</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="border border-yellow-300 rounded-lg overflow-hidden">
+                                    <div class="bg-yellow-100 p-3 border-b border-yellow-300">
+                                        <h6 class="font-bold text-yellow-800">🎓 Claim: Stay at your chair, don't approach bar</h6>
+                                    </div>
+                                    <div class="bg-red-50 p-3">
+                                        <p class="text-sm font-semibold text-red-700 mb-2">⚖️ Legal Reality:</p>
+                                        <ul class="text-xs text-red-600 space-y-1">
+                                            <li>• <strong>Pa.R.Crim.P. 121</strong> - Court controls proceedings and courtroom conduct</li>
+                                            <li>• <strong>Illinois v. Allen (1970)</strong> - Disruptive defendants can be removed</li>
+                                            <li>• <strong>Result:</strong> Refusing court orders = contempt, not jurisdictional victory</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="border border-yellow-300 rounded-lg overflow-hidden">
+                                    <div class="bg-yellow-100 p-3 border-b border-yellow-300">
+                                        <h6 class="font-bold text-yellow-800">🎓 Claim: Demand charging instrument for "verification"</h6>
+                                    </div>
+                                    <div class="bg-red-50 p-3">
+                                        <p class="text-sm font-semibold text-red-700 mb-2">⚖️ Legal Reality:</p>
+                                        <ul class="text-xs text-red-600 space-y-1">
+                                            <li>• <strong>Pa.R.Crim.P. 540</strong> - Complaint must be read to defendant</li>
+                                            <li>• <strong>6th Amendment</strong> - Right to be informed of charges (satisfied by reading)</li>
+                                            <li>• <strong>Result:</strong> Judge reading charges on record satisfies constitutional requirement</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="border border-yellow-300 rounded-lg overflow-hidden">
+                                    <div class="bg-yellow-100 p-3 border-b border-yellow-300">
+                                        <h6 class="font-bold text-yellow-800">🎓 Claim: No corpus delicti, no crime (need injured party)</h6>
+                                    </div>
+                                    <div class="bg-red-50 p-3">
+                                        <p class="text-sm font-semibold text-red-700 mb-2">⚖️ Legal Reality:</p>
+                                        <ul class="text-xs text-red-600 space-y-1">
+                                            <li>• <strong>Commonwealth v. Lettrich (1983)</strong> - Corpus delicti = body of crime (elements), not physical victim</li>
+                                            <li>• <strong>18 Pa.C.S. § 6106</strong> - Firearm violations don't require individual victim</li>
+                                            <li>• <strong>Result:</strong> State is the injured party in criminal violations; individual victim not required</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-burgundy text-white p-6 rounded text-center">
+                            <h4 class="text-xl font-bold mb-2">The Real Victory</h4>
+                            <p class="mb-2">
+                                Not the YouTube nonsense working - but catching the REAL procedural violations that matter legally.
+                            </p>
+                            <p class="text-gold font-semibold">
+                                Missing transcripts = Due process violation. Constitutional law beats sovereign citizen theater.
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (contentId === 'arraignment-experience') {
+                title.textContent = 'Arraignment with Judge Holefelder: Section 1983 Reality Check';
+                content.innerHTML = `
+                    <div class="prose max-w-none">
+                        <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+                            <strong>Case Study:</strong> When valid statutes get misapplied through sovereign citizen misunderstanding.
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">🏛️ The Scene: Judge Diane M. Holefelder</h4>
+                        <p>Fresh off arrest and processing, facing arraignment. Time to test the YouTube University classic: "I don't understand" 
+                        (allegedly meaning you don't "stand under their authority" 😂).</p>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold mb-2">🎭 The Performance:</h4>
+                            <div class="font-mono text-sm bg-white p-3 rounded border">
+                                <p><strong>JUDGE:</strong> "Do you understand the charges against you?"</p>
+                                <p><strong>DEFENDANT:</strong> "No, I don't understand. And furthermore, I'm placing you on notice of Title 42 Section 1983 for depriving me of my rights under the color of law!"</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">🤔 The Critical Analysis:</h4>
+                        <div class="space-y-4">
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-green-700 mb-2">✅ What's Correct:</h5>
+                                <p>Title 42 USC § 1983 is absolutely a valid statute for civil rights violations under color of law.</p>
+                            </div>
+                            
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-red-700 mb-2">❌ What's Wrong:</h5>
+                                <ul class="list-disc ml-5 space-y-1">
+                                    <li><strong>Grounds?</strong> What specific constitutional right is being violated?</li>
+                                    <li><strong>Color of Law?</strong> She's exercising lawful judicial authority</li>
+                                    <li><strong>Deprivation?</strong> Setting bond is within statutory power</li>
+                                    <li><strong>Timing?</strong> This is arraignment procedure, not rights violation</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <h4 class="font-bold text-blue-700 mb-2">📚 Section 1983 Requirements:</h4>
+                            <ol class="list-decimal ml-5 space-y-2">
+                                <li>Action under color of state law ✅</li>
+                                <li>Deprivation of constitutional rights ❓</li>
+                                <li>Person acting in official capacity ✅</li>
+                                <li>Specific constitutional violation ❌</li>
+                            </ol>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">💰 The $75,000 Result:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <p><strong>Bond Set:</strong> $75,000 (Alhamdulillah, made it out in 3 days on January 3rd)</p>
+                            <p><strong>Speedy Trial Clock:</strong> Started ticking from arrest date per PA Rule 600</p>
+                            <p><strong>Judge's Reaction:</strong> Proceeded with standard arraignment procedure</p>
+                        </div>
+                        
+                        <div class="bg-burgundy text-white p-6 rounded text-center">
+                            <h4 class="text-xl font-bold mb-2">The Lesson</h4>
+                            <p class="mb-2">
+                                Know your statutes, but understand when and how to apply them correctly.
+                            </p>
+                            <p class="text-gold font-semibold">
+                                Real constitutional law beats YouTube University every time.
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (contentId === 'holefelder-docket-analysis') {
+                title.textContent = 'Holefelder Docket Analysis: 7 Continuances and Case Progression';
+                content.innerHTML = `
+                    <div class="prose max-w-none">
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                            <strong>Case Progression Analysis:</strong> MJ-32238-CR-0000404-2023 - The complete journey from arrest to preliminary hearing.
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">📋 Docket Timeline Overview:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <ul class="space-y-2 text-sm">
+                                <li><strong>December 31, 2023:</strong> Initial arrest and charges filed</li>
+                                <li><strong>December 31, 2023 (4 hours later):</strong> Arraignment with Judge Holefelder ($75K bond)</li>
+                                <li><strong>January 18, 2024:</strong> Griffin preliminary hearing (competency eval ordered)</li>
+                                <li><strong>January 31, 2024:</strong> Case transferred back to Holefelder</li>
+                                <li><strong>March 27, 2024:</strong> "Commitment Canceled" incident</li>
+                                <li><strong>Multiple continuances...</strong></li>
+                                <li><strong>August 28, 2024:</strong> Final preliminary hearing</li>
+                            </ul>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">🔥 The Charges Breakdown:</h4>
+                        <div class="space-y-3 mb-4">
+                            <div class="bg-red-50 border-l-4 border-red-500 p-3 rounded">
+                                <p><strong>Charge 1:</strong> 18 Pa.C.S. § 6105 - Possession Of Firearm Prohibited (F1)</p>
+                                <p class="text-xs text-red-600 mt-2">
+                                    <strong>Federal Context:</strong> Also prohibited under 18 USC § 922(g)(1) - felon in possession (15+ year prior conviction)
+                                </p>
+                            </div>
+                            <div class="bg-red-50 border-l-4 border-red-500 p-3 rounded">
+                                <p><strong>Charge 2:</strong> 18 Pa.C.S. § 6106 - Firearms Not To Be Carried W/O License (F3)</p>
+                                <p class="text-xs text-red-600 mt-2">
+                                    <strong>Note:</strong> No concealed carry permit - straightforward violation
+                                </p>
+                            </div>
+                            <div class="bg-yellow-50 p-3 rounded">
+                                <p><strong>Charges 3-4:</strong> Obstruct Admin Law (M2), Resist Arrest (M2)</p>
+                            </div>
+                            <div class="bg-blue-50 p-3 rounded">
+                                <p><strong>Charges 5-7:</strong> Traffic violations (Sunscreening, Obscured Plates, Lane violations)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-orange-50 border border-orange-300 rounded-lg p-4 mb-4">
+                            <h4 class="font-bold text-orange-700 mb-3">⏰ The REAL Significance: Case Timeline Analysis</h4>
+                            <div class="text-sm space-y-2">
+                                <p><strong>Typical Cases with LAWYERS:</strong> Arrested → Tried → Convicted within 6-7 months</p>
+                                <p><strong>This Case:</strong> Nearly 1 YEAR just to get out of preliminary hearing stage</p>
+                                <p class="font-semibold text-orange-800">
+                                    <strong>Why the Delays?</strong> With clear federal and state violations, this should have been straightforward. 
+                                    The extended timeline suggests procedural challenges were causing problems they didn't expect.
+                                </p>
+                            </div>
+                            <div class="bg-orange-100 p-3 rounded mt-3 text-xs">
+                                <p><strong>Educational Point:</strong> When constitutional challenges are properly raised (vs. sovereign citizen nonsense), 
+                                even cases with clear violations become complicated for the prosecution.</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">⏰ Speedy Trial Implications:</h4>
+                        <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                            <p class="font-semibold text-yellow-800 mb-2">PA Rule 600 Analysis:</p>
+                            <ul class="text-sm space-y-1">
+                                <li>• <strong>Clock Started:</strong> December 31, 2023 (arrest date)</li>
+                                <li>• <strong>Time Limit:</strong> 365 days (not incarcerated)</li>
+                                <li>• <strong>7 Continuances:</strong> Each potentially excludable time</li>
+                                <li>• <strong>Final Hearing:</strong> August 28, 2024 (241 days later)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-burgundy text-white p-6 rounded text-center">
+                            <h4 class="text-xl font-bold mb-2">The Docket Tells the Story</h4>
+                            <p class="mb-2">
+                                From sovereign citizen theater to constitutional law understanding - all documented in official court records.
+                            </p>
+                            <p class="text-gold font-semibold">
+                                This is why real court documents matter more than YouTube videos.
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (contentId === 'august-28-transcript') {
+                title.textContent = 'August 28, 2024 Preliminary Hearing: Key Transcript Excerpts';
+                content.innerHTML = `
+                    <div class="prose max-w-none">
+                        <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-6">
+                            <strong>Evolution Documented:</strong> Official transcripts showing the transition from pseudolegal tactics to constitutional law.
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">🎭 The Transformation:</h4>
+                        <div class="grid md:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-red-700 mb-2">❌ Before (YouTube University):</h5>
+                                <div class="text-sm font-mono bg-white p-3 rounded border">
+                                    <p>"I'm not Melvin Andrew Roach Jr."</p>
+                                    <p>"I'm the living man"</p>
+                                    <p>"That's the corporate fiction"</p>
+                                    <p>"Legal fiction" arguments</p>
+                                </div>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-green-700 mb-2">✅ After (Constitutional Law):</h5>
+                                <div class="text-sm font-mono bg-white p-3 rounded border">
+                                    <p>Proper constitutional arguments</p>
+                                    <p>Procedural motions filed</p>
+                                    <p>Right to self-representation</p>
+                                    <p>Due process challenges</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">📝 Key Transcript Moments:</h4>
+                        <div class="space-y-4 mb-6">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-blue-700 mb-2">Constitutional Rights Assertion:</h5>
+                                <p class="text-sm">
+                                    The court had to acknowledge defendant's constitutional right to self-representation, 
+                                    even while pressuring acceptance of public defender.
+                                </p>
+                            </div>
+                            
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-yellow-700 mb-2">Paperwork Strategy:</h5>
+                                <p class="text-sm">
+                                    "I was sending in all types of paperwork to the courts and the PD and Prosecutor, 
+                                    which were all disregarded - for the purpose of the record."
+                                </p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-green-700 mb-2">Progress Recognition:</h5>
+                                <p class="text-sm">
+                                    Court recognized enough constitutional understanding to avoid incarceration 
+                                    and respect right to self-defense.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">⚖️ Legal Learning Points:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <ul class="text-sm space-y-2">
+                                <li><strong>Procedural Understanding:</strong> Filing motions (even if disregarded) shows legal comprehension</li>
+                                <li><strong>Constitutional Knowledge:</strong> Proper assertion of fundamental rights</li>
+                                <li><strong>Strategic Evolution:</strong> From pseudolegal theater to real legal procedure</li>
+                                <li><strong>Respect Earned:</strong> Court acknowledged constitutional understanding</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-burgundy text-white p-6 rounded text-center">
+                            <h4 class="text-xl font-bold mb-2">The Real Victory</h4>
+                            <p class="mb-2">
+                                Not the YouTube nonsense being "accepted" - but constitutional law being properly respected.
+                            </p>
+                            <p class="text-gold font-semibold">
+                                This is what 12+ years of study plus real courtroom testing produces.
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (contentId === 'grazier-hearing-2025') {
+                title.textContent = 'February 24, 2025 Grazier Hearing: Establishing Rights "On The Record"';
+                content.innerHTML = `
+                    <div class="prose max-w-none">
+                        <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-6">
+                            <strong>Proper Grazier Hearing:</strong> Judge Brennan demonstrates how waiver of counsel should be conducted constitutionally.
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">⚖️ What is a Grazier Hearing?</h4>
+                        <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                            <p class="text-sm mb-2">
+                                <strong>Grazier Hearing Requirements:</strong> Pennsylvania courts must ensure any waiver of counsel is "knowing, intelligent, and voluntary" and establish this ON THE RECORD for constitutional compliance.
+                            </p>
+                            <ul class="text-sm space-y-1 mt-3">
+                                <li>• <strong>Knowing:</strong> Defendant understands the right to counsel</li>
+                                <li>• <strong>Intelligent:</strong> Defendant comprehends consequences of waiving counsel</li>
+                                <li>• <strong>Voluntary:</strong> Decision made without coercion</li>
+                                <li>• <strong>On Record:</strong> Court establishes all of this in the official transcript</li>
+                            </ul>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">🎯 Why "On The Record" Matters:</h4>
+                        <div class="bg-yellow-50 p-4 rounded-lg mb-6">
+                            <p class="text-sm mb-2">
+                                <strong>The court record is EVERYTHING in appellate review.</strong> Without proper establishment on the record:
+                            </p>
+                            <ul class="text-sm space-y-1 mt-2">
+                                <li>• Appeals courts can't review what wasn't properly documented</li>
+                                <li>• Constitutional violations become unreviewable</li>
+                                <li>• Your rights evaporate if not established in the transcript</li>
+                                <li>• "It's not what happened - it's what the record shows happened"</li>
+                            </ul>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">🚨 YouTube University Myth BUSTED:</h4>
+                        <div class="grid md:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-red-700 mb-2">❌ What Gurus Teach:</h5>
+                                <div class="text-sm bg-white p-3 rounded border">
+                                    <p class="mb-2">"Don't say 'pro se' - it gives them jurisdiction!"</p>
+                                    <p class="mb-2">"Use 'in propria persona' instead"</p>
+                                    <p class="mb-2">"Say 'sui juris' - it's more powerful"</p>
+                                    <p>"These Latin terms protect your rights!"</p>
+                                </div>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-green-700 mb-2">✅ February 24th Reality:</h5>
+                                <div class="text-sm bg-white p-3 rounded border">
+                                    <p class="mb-2"><strong>Court:</strong> "Acknowledged pro se rights"</p>
+                                    <p class="mb-2"><strong>Prosecution:</strong> "Acknowledged pro se rights"</p>
+                                    <p class="mb-2"><strong>Result:</strong> No jurisdictional issues whatsoever</p>
+                                    <p class="font-semibold text-green-700">Modern courts understand "pro se" perfectly!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">📚 Educational Takeaways:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <ul class="text-sm space-y-2">
+                                <li><strong>Proper Procedure Works:</strong> Judge Brennan followed constitutional requirements precisely</li>
+                                <li><strong>Record Establishment:</strong> All rights and waivers properly documented in transcript</li>
+                                <li><strong>Pro Se Recognition:</strong> Court had no problem with "pro se" terminology</li>
+                                <li><strong>YouTube Nonsense Debunked:</strong> Archaic Latin terms are unnecessary theater</li>
+                                <li><strong>Constitutional Success:</strong> Real law beats pseudolegal performance every time</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-burgundy text-white p-6 rounded text-center">
+                            <h4 class="text-xl font-bold mb-2">The Real Education</h4>
+                            <p class="mb-2">
+                                Judge Brennan conducted a textbook Grazier hearing - establishing constitutional rights properly "on the record."
+                            </p>
+                            <p class="text-gold font-semibold">
+                                This is what proper constitutional procedure looks like, not YouTube University theater.
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (contentId === 'commitment-canceled-analysis') {
+                title.textContent = 'Commitment Canceled: March 27th Judicial Overreach Analysis';
+                content.innerHTML = `
+                    <div class="prose max-w-none">
+                        <div class="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+                            <strong>Judicial Overreach Documentation:</strong> When judges act outside their authority and get checked.
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">🚨 The March 27th Incident:</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <h5 class="font-bold mb-2">Timeline of Events:</h5>
+                            <ol class="list-decimal ml-5 space-y-2 text-sm">
+                                <li><strong>Arrival:</strong> Defendant appears for scheduled hearing</li>
+                                <li><strong>Immediate Custody:</strong> Judge orders defendant to back of courtroom in custody</li>
+                                <li><strong>Claimed Reason:</strong> "Non-compliance with competency evaluation order"</li>
+                                <li><strong>One Hour Later:</strong> Defendant brought back out, released</li>
+                                <li><strong>Docket Entry:</strong> "Commitment Canceled" - official acknowledgment</li>
+                            </ol>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">⚖️ Legal Analysis:</h4>
+                        <div class="space-y-4 mb-6">
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-red-700 mb-2">❌ Due Process Violations:</h5>
+                                <ul class="text-sm space-y-1">
+                                    <li>• No warrant for detention</li>
+                                    <li>• No contempt hearing or finding</li>
+                                    <li>• No specific violation identified</li>
+                                    <li>• No opportunity to be heard before custody</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-yellow-700 mb-2">⚠️ Judicial Intimidation:</h5>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Using custody threat as control mechanism</li>
+                                    <li>• Avoiding public exchange in packed courtroom</li>
+                                    <li>• Demonstrating judicial power rather than legal authority</li>
+                                    <li>• Testing defendant's resolve and knowledge</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">🏛️ Delaware County Context:</h4>
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <p class="text-sm">
+                                <strong>Delaware County Context:</strong> This incident represents unprecedented pushback against 
+                                judicial overreach in one of Pennsylvania's most procedurally strict jurisdictions. The fact that 
+                                constitutional challenges were causing delays in what should have been a straightforward case speaks volumes.
+                            </p>
+                            <div class="bg-blue-100 p-3 rounded mt-3 text-xs">
+                                <p><strong>Case Reality Check:</strong> Clear federal (18 USC § 922) and state (18 Pa.C.S. § 6105/6106) violations, 
+                                no license, prior felony - yet nearly a year to get past preliminary. Compare that to typical 6-7 month 
+                                conviction timelines WITH lawyers.</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">📈 Significance:</h4>
+                        <div class="bg-green-50 p-4 rounded-lg mb-4">
+                            <h5 class="font-bold text-green-700 mb-2">Why This Matters:</h5>
+                            <ul class="text-sm space-y-2">
+                                <li><strong>Constitutional Understanding:</strong> Even while still learning procedure, constitutional rights were being properly asserted</li>
+                                <li><strong>Judicial Accountability:</strong> Judge forced to release without legal basis for detention</li>
+                                <li><strong>Precedent Setting:</strong> First time seeing this level of challenge in Delaware County</li>
+                                <li><strong>Educational Value:</strong> Shows difference between understanding rights vs. pseudolegal nonsense</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-burgundy text-white p-6 rounded text-center">
+                            <h4 class="text-xl font-bold mb-2">The Learning Moment</h4>
+                            <p class="mb-2">
+                                When judges overreach, constitutional knowledge provides real protection - not YouTube University tricks.
+                            </p>
+                            <p class="text-gold font-semibold">
+                                "Commitment Canceled" = Judge had to back down.
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (contentId === 'common-pleas-progression') {
+                title.textContent = 'Common Pleas Court Progression - Judge Brennan Era';
+                content.innerHTML = `
+                    <div class="max-w-none">
+                        <div class="bg-purple-50 border-l-4 border-purple-500 p-4 mb-6">
+                            <strong>🏛️ Level Up:</strong> From magistrate district court to the "Big Dogs" - Court of Common Pleas, Delaware County
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">🎯 The Transition Timeline</h4>
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <h5 class="font-bold mb-2">August 28, 2024 - Holefelder's Final Decision:</h5>
+                            <div class="font-mono text-sm bg-white p-3 rounded border space-y-1">
+                                <p><strong>JUDGE HOLEFELDER:</strong> "Either participate or sit in the gallery" (at end of preliminary hearing)</p>
+                                <p><strong>COURT:</strong> Case held over for Common Pleas Court</p>
+                                <p><strong>DEFENDANT'S REACTION:</strong> "I thought I was doing something, lmao" 😂</p>
+                                <p><strong>SEPTEMBER 3, 2024:</strong> First scheduled appearance in Brennan's court</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">🏛️ Welcome to the Big Dogs Court</h4>
+                        <div class="bg-gold text-charcoal p-4 rounded-lg mb-4">
+                            <h5 class="font-bold mb-2">Media, PA Courthouse - Common Pleas Court</h5>
+                            <div class="text-sm space-y-2">
+                                <p><strong>The Setting:</strong> No more small magistrate office - this is the real courthouse</p>
+                                <p><strong>Judge Brennan:</strong> Serious felony court judge</p>
+                                <p><strong>First Words:</strong> "Get a lawyer" - immediately rescheduled to 10/11/24</p>
+                                <p><strong>The Message:</strong> This isn't magistrate court anymore - you're in the big leagues</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">📅 The Continuance Pattern</h4>
+                        <div class="space-y-3 mb-4">
+                            <div class="bg-blue-50 p-3 rounded">
+                                <p><strong>First Appearance:</strong> Judge Brennan orders legal representation, reschedules to 10/11/24</p>
+                            </div>
+                            <div class="bg-blue-50 p-3 rounded">
+                                <p><strong>Multiple Continuances:</strong> Case continued several times (detailed in docket)</p>
+                            </div>
+                            <div class="bg-yellow-50 p-3 rounded">
+                                <p><strong>January 2025 Scheduled:</strong> Court date set for 1/11/25 or 1/18/25</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">🚨 The Philly Traffic Stop Incident</h4>
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4 mb-4">
+                            <h5 class="font-bold text-red-700 mb-2">DOT Plate Strikes Again!</h5>
+                            <div class="text-sm space-y-2">
+                                <p><strong>The Setup:</strong> Still had that "dumb nonsense DOT plate" on the car</p>
+                                <p><strong>Philadelphia Police:</strong> Traffic stop for unrelated violations</p>
+                                <p><strong>Monday Court Date:</strong> January 18, 2025 - MISSED due to traffic stop</p>
+                                <p><strong>Bench Warrant:</strong> Issued for failure to appear</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">✅ Voluntary Surrender: PROCEDURE vs. JURISDICTION</h4>
+                        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded-lg mb-4">
+                            <h5 class="font-bold text-green-700 mb-3">🎯 The Constitutional Education Moment</h5>
+                            <div class="text-sm space-y-2 mb-3">
+                                <p><strong>January 25th/29th, 2025:</strong> Voluntarily surrendered on bench warrant</p>
+                                <p><strong>Result:</strong> Never taken into custody, warrant lifted within 1 hour, new date set</p>
+                                <p><strong>Critical Question:</strong> If they wanted to "assert jurisdiction," why didn't they?</p>
+                            </div>
+                            
+                            <div class="bg-green-100 p-3 rounded">
+                                <h6 class="font-bold text-green-800 mb-2">💡 The Answer: ADMINISTRATIVE PROCEDURE!</h6>
+                                <div class="text-xs space-y-1">
+                                    <p><strong>They Follow PROCEDURE:</strong> Courts operate under administrative authority with specific rules</p>
+                                    <p><strong>Voluntary Surrender:</strong> Shows good faith compliance with court procedures</p>
+                                    <p><strong>Warrant Purpose:</strong> Ensure appearance, not punish - compliance achieved</p>
+                                    <p><strong>Educational Point:</strong> Understanding procedure beats fighting imaginary jurisdiction battles</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">💡 Educational Observations</h4>
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <div class="text-sm space-y-2">
+                                <p><strong>Magistrate vs. Common Pleas:</strong> Different atmosphere, higher stakes, more formal procedures</p>
+                                <p><strong>Pro Se Challenges:</strong> Judge Brennan immediately suggests legal representation</p>
+                                <p><strong>Case Longevity:</strong> From December 2023 arrest to February 2025 - over a year in system</p>
+                                <p><strong>Constitutional Impact:</strong> Case that should have been 6-7 months with clear violations extended significantly</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">📚 EXPOSED: YouTube University Misconceptions</h4>
+                        <div class="space-y-4 mb-6">
+                            <div class="bg-red-50 border border-red-300 rounded-lg p-4">
+                                <h5 class="font-bold text-red-700 mb-3">❌ Misconception #1: "Administrative" vs "Constitutional" Courts</h5>
+                                <div class="text-sm space-y-2">
+                                    <p><strong>What They Teach:</strong> Courts are "administrative" and somehow not "constitutional"</p>
+                                    <p><strong>The Logic Flaw:</strong> If that's true, why don't they teach you to use ADMINISTRATIVE PROCEDURAL RULES?</p>
+                                    <p><strong>Reality Check:</strong> They teach you to void out the very STATUTORY CODES that govern the process!</p>
+                                    <div class="bg-red-100 p-3 rounded mt-2">
+                                        <p class="text-xs"><strong>Truth:</strong> Courts operate under administrative procedures WITH constitutional protections. Learn the rules, don't void them out!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-blue-50 border border-blue-300 rounded-lg p-4">
+                                <h5 class="font-bold text-blue-700 mb-3">💪 The 14th Amendment TRUTH</h5>
+                                <div class="text-sm space-y-2">
+                                    <p><strong>What They Teach:</strong> 14th Amendment makes you a "corporate subject/citizen"</p>
+                                    <p><strong>The Real History:</strong> Post-Dred Scott decision - 14th Amendment is a HAND CANNON for Black Americans</p>
+                                    <p><strong>Constitutional Reality:</strong> Puts you directly on par with "citizen" as defined by Constitution</p>
+                                    <div class="bg-blue-100 p-3 rounded mt-2">
+                                        <p class="text-xs"><strong>The Truth:</strong> 14th Amendment protects ALL citizens FROM governmental overreach, state AND federal!</p>
+                                        <p class="text-xs font-semibold mt-1">It's PROTECTION FROM government, not subjection TO government!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-burgundy text-white p-6 rounded text-center">
+                            <h4 class="text-xl font-bold mb-2">The Real Constitutional Law Education</h4>
+                            <p class="mb-2">
+                                Courts follow PROCEDURE under constitutional framework. Learn the rules, use the protections.
+                            </p>
+                            <p class="text-gold font-semibold">
+                                14th Amendment = Constitutional protection. Administrative procedure = The pathway to justice.
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }
+            else if (contentId === 'holefelder-holdover') {
+                title.textContent = 'September 3, 2024 - Judge Holefelder Holdover Decision Analysis';
+                content.innerHTML = `
+                    <div class="max-w-none">
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                            <strong>⚖️ The Moment of Truth:</strong> Judge Holefelder's final decision after the August 28th preliminary hearing
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">🎭 The Exchange</h4>
+                        <div class="bg-white border rounded-lg p-4 mb-4 shadow-sm">
+                            <div class="font-mono text-sm space-y-2 leading-relaxed">
+                                <p><strong>JUDGE HOLEFELDER:</strong> "Either participate or sit in the gallery"</p>
+                                <p><strong>COURT DECISION:</strong> Case held over for Common Pleas Court</p>
+                                <p><strong>CASE STATUS:</strong> Preliminary hearing phase complete</p>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">🤔 What This Really Meant</h4>
+                        <div class="grid md:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-yellow-700 mb-2">🎓 Defendant's Perspective:</h5>
+                                <ul class="text-sm space-y-1">
+                                    <li>• "I thought I was doing something, lmao"</li>
+                                    <li>• Felt like a victory moment</li>
+                                    <li>• Believed the tactics were working</li>
+                                    <li>• Ready for the next level</li>
+                                </ul>
+                            </div>
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-blue-700 mb-2">⚖️ Legal Reality:</h5>
+                                <ul class="text-sm space-y-1">
+                                    <li>• Preliminary hearing requirements met</li>
+                                    <li>• Evidence sufficient for trial court</li>
+                                    <li>• Pro se representation acknowledged</li>
+                                    <li>• Standard case progression</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">📚 Legal Analysis</h4>
+                        <div class="space-y-4 mb-6">
+                            <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                                <h5 class="font-bold text-green-700 mb-2">✅ What Actually Happened:</h5>
+                                <div class="text-sm space-y-2">
+                                    <p><strong>Pa.R.Crim.P. 542:</strong> Preliminary hearing determines if prima facie case exists</p>
+                                    <p><strong>Evidence Standard Met:</strong> Commonwealth presented sufficient evidence to hold for trial</p>
+                                    <p><strong>Jurisdictional Transfer:</strong> Case properly elevated to trial court level</p>
+                                    <p><strong>Constitutional Rights:</strong> Defendant's choice to participate or observe acknowledged</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
+                                <h5 class="font-bold text-orange-700 mb-2">⏰ The Timeline Significance:</h5>
+                                <div class="text-sm space-y-2">
+                                    <p><strong>December 31, 2023:</strong> Arrest</p>
+                                    <p><strong>September 3, 2024:</strong> Holdover (8+ months later)</p>
+                                    <p><strong>Typical Timeline:</strong> Most preliminary hearings resolve within 30-60 days</p>
+                                    <p><strong>Educational Point:</strong> Constitutional challenges extend proceedings significantly</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h4 class="text-burgundy mb-4">🎯 The Real Victory</h4>
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <p class="text-sm mb-2">
+                                <strong>Not the YouTube University nonsense working</strong> - but the fact that constitutional challenges 
+                                and procedural issues extended a "straightforward" case for over 8 months at magistrate level.
+                            </p>
+                            <div class="bg-blue-100 p-3 rounded text-xs">
+                                <p><strong>Compare:</strong> Clear federal (18 USC § 922) and state (18 Pa.C.S. § 6105/6106) violations, 
+                                no license, prior felony conviction - yet 8+ months to get past preliminary vs. typical 6-7 month 
+                                total conviction timeline WITH lawyers.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-burgundy text-white p-6 rounded text-center">
+                            <h4 class="text-xl font-bold mb-2">The Lesson</h4>
+                            <p class="mb-2">
+                                Judge Holefelder's choice represented the end of one phase and beginning of another.
+                            </p>
+                            <p class="text-gold font-semibold">
+                                Constitutional law creates complications. Sovereign citizen theater does not.
+                            </p>
+                        </div>
+                    </div>
+                `;
+            }
+            // Example content - replace with your actual content loading logic
+            else if (contentId === 'transcript1') {
+                title.textContent = 'Legal Fiction Court Transcript - Full Document';
+                content.innerHTML = `
+                    <div class="prose max-w-none">
+                        <p class="bg-red-50 border-l-4 border-red-500 p-4 mb-6">
+                            <strong>Disclaimer:</strong> This is actual court transcript content showing the failure of pseudolegal arguments.
+                        </p>
+                        <h4>Court Proceeding - December 31, 2023</h4>
+                        <div class="bg-gray-50 p-4 rounded font-mono text-sm">
+                            <p><strong>DEFENDANT:</strong> "The appearance of the legal fiction...the corporate entity"</p>
+                            <p><strong>DEFENDANT:</strong> "I'm not Melvin Andrew Roach Jr., I'm Melvin...I'm the living man"</p>
+                            <p><strong>DEFENDANT:</strong> "That's the corporate fiction"</p>
+                            <br>
+                            <p><strong>JUDGE:</strong> "I don't know of what you refer to when you say legal fiction"</p>
+                            <p><strong>JUDGE:</strong> "What I have in my possession is a certificate of birth of a Melvin Andrew Roach, Jr. That is what I have in my possession"</p>
+                        </div>
+                        <p class="mt-4"><strong>Result:</strong> Complete dismissal of legal fiction theory. Judge had no idea what the defendant was talking about.</p>
+                    </div>
+                `;
+            }
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('content-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Download functionality
+        function downloadContent(filename) {
+            // Map all available documents with explicit paths
+            const availableFiles = {
+                // Original Griffin court documents
+                'griffin-docket-sheet-original.pdf': './assets/documents/griffin-docket-sheet-original.pdf',
+                'criminal-complaint-original.pdf': './assets/documents/criminal-complaint-warrant-original.pdf',
+                'criminal-complaint-warrant-original.pdf': './assets/documents/criminal-complaint-warrant-original.pdf',
+                
+                // New Holefelder court documents  
+                'Holefelder_MdjDocketSheet.pdf': './assets/documents/Holefelder_MdjDocketSheet.pdf',
+                'Transcripts_from_8-28-2024.pdf': './assets/documents/Transcripts_from_8-28-2024.pdf',
+                
+                // Common Pleas court documents
+                'Brennan_CpDocketSheet.pdf': './assets/documents/Brennan_CpDocketSheet.pdf',
+                'Grazier_Hearing_Transcript_2-24-2025.pdf': './assets/documents/Grazier_Hearing_Transcript_2-24-2025.pdf',
+                
+                // Map redacted requests to actual available files
+                'griffin-docket-sheet-redacted.pdf': './assets/documents/griffin-docket-sheet-original.pdf',
+                'criminal-complaint-redacted.pdf': './assets/documents/criminal-complaint-warrant-original.pdf'
+            };
+            
+            // Check if file is available
+            if (!availableFiles[filename]) {
+                showNotification('Document not yet available. Please check back soon.', 'info');
+                return;
+            }
+            
+            const actualFile = availableFiles[filename];
+            
+            // Show notification for redacted files
+            if (filename.includes('redacted')) {
+                showNotification('Opening original document (redacted version in progress)', 'info');
+            }
+            
+            // Create a proper download link
+            const link = document.createElement('a');
+            link.href = actualFile;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            
+            // For better compatibility, don't force download, let browser handle
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        // Notification system for user feedback
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg max-w-sm ${
+                type === 'success' ? 'bg-green-500 text-white' :
+                type === 'error' ? 'bg-red-500 text-white' :
+                'bg-blue-500 text-white'
+            }`;
+            
+            notification.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas ${
+                        type === 'success' ? 'fa-check-circle' :
+                        type === 'error' ? 'fa-exclamation-circle' :
+                        'fa-info-circle'
+                    } mr-2"></i>
+                    <span>${message}</span>
+                    <button class="ml-4 hover:opacity-70" onclick="this.parentElement.parentElement.remove()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Auto-remove after 5 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('content-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
