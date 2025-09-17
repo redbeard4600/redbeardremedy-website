@@ -2048,6 +2048,7 @@
                 'Brennan_CpDocketSheet.pdf': 'assets/Brennan_CpDocketSheet.pdf',
                 'Criminal complaint, warrant, etc_3.26.25.pdf': 'assets/Criminal complaint, warrant, etc_3.26.25.pdf',
                 'Griffin_MdjDocketSheet.pdf': 'assets/Griffin_MdJDocketSheet.pdf',
+                'Griffin_MdJDocketSheet.pdf': 'assets/Griffin_MdJDocketSheet.pdf', // Alternative mapping
                 'Holefelder_MdjDocketSheet.pdf': 'assets/Holefelder_MdJDocketSheet.pdf',
                 'TRANSCRIPT FROM 2.24.25.pdf': 'assets/TRANSCRIPT FROM 2.24.25.pdf',
                 'Transcripts from 8-28-2024.pdf': 'assets/Transcripts from 8-28-2024.pdf',
@@ -2119,6 +2120,25 @@
         document.getElementById('content-modal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeModal();
+            }
+        });
+
+        // Mobile Menu Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+                
+                // Close mobile menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
             }
         });
     </script>
