@@ -1088,8 +1088,17 @@
             const buttons = document.querySelectorAll('.filter-btn');
             
             // Update button states
-            buttons.forEach(btn => btn.classList.remove('active', 'bg-gold', 'text-charcoal'));
-            event.target.classList.add('active', 'bg-gold', 'text-charcoal');
+            buttons.forEach(btn => {
+                btn.classList.remove('active', 'bg-gold', 'text-charcoal');
+                btn.classList.add('border-2', 'border-white', 'text-white');
+            });
+            
+            // Find and activate the clicked button
+            const activeButton = document.querySelector(`[onclick="filterContent('${category}')"]`);
+            if (activeButton) {
+                activeButton.classList.remove('border-2', 'border-white', 'text-white');
+                activeButton.classList.add('active', 'bg-gold', 'text-charcoal');
+            }
             
             // Filter content
             items.forEach(item => {
@@ -2047,9 +2056,9 @@
                 // Court Documents (PDFs are in assets/documents/ directory)
                 'Brennan_CpDocketSheet.pdf': 'assets/documents/Brennan_CpDocketSheet.pdf',
                 'Criminal complaint, warrant, etc_3.26.25.pdf': 'assets/documents/Criminal complaint, warrant, etc_3.26.25.pdf',
-                'Griffin_MdjDocketSheet.pdf': 'assets/documents/Griffin_MdjDocketSheet.pdf',
-                'Griffin_MdJDocketSheet.pdf': 'assets/documents/Griffin_MdjDocketSheet.pdf', // Alternative mapping
-                'Holefelder_MdjDocketSheet.pdf': 'assets/documents/Holefelder_MdjDocketSheet.pdf',
+                'Griffin_MdjDocketSheet.pdf': 'assets/documents/Griffin_MdJDocketSheet.pdf', // Fixed to match actual file
+                'Griffin_MdJDocketSheet.pdf': 'assets/documents/Griffin_MdJDocketSheet.pdf', // Alternative mapping
+                'Holefelder_MdjDocketSheet.pdf': 'assets/documents/Holefelder_MdJDocketSheet.pdf', // Fixed to match actual file
                 'TRANSCRIPT FROM 2.24.25.pdf': 'assets/documents/TRANSCRIPT FROM 2.24.25.pdf',
                 'Transcripts from 8-28-2024.pdf': 'assets/documents/Transcripts from 8-28-2024.pdf',
                 
