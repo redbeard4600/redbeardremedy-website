@@ -171,7 +171,7 @@
                         </p>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-500">Type: PDF Template</span>
-                            <button onclick="downloadContent('constitutional-motion.pdf')" class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
+                            <button onclick="downloadContent('Brennan_CpDocketSheet.pdf')" class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
                                 <i class="fas fa-download mr-1"></i> Download
                             </button>
                         </div>
@@ -312,7 +312,7 @@
                                         class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
                                     <i class="fas fa-eye mr-1"></i> View Case Details
                                 </button>
-                                <button onclick="downloadContent('griffin-docket-sheet-original.pdf')" 
+                                <button onclick="downloadContent('Griffin_MdjDocketSheet.pdf')" 
                                         class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
                                     <i class="fas fa-download mr-1"></i> Docket Sheet
                                 </button>
@@ -351,7 +351,7 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-500">Format: PDF (Redacted)</span>
-                            <button onclick="downloadContent('griffin-docket-sheet-original.pdf')" 
+                            <button onclick="downloadContent('Griffin_MdjDocketSheet.pdf')" 
                                     class="bg-charcoal text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors">
                                 <i class="fas fa-download mr-1"></i> Download
                             </button>
@@ -389,7 +389,7 @@
                         </div>
                         <div class="flex justify-between items-center">
                             <span class="text-sm text-gray-500">Format: PDF (Redacted)</span>
-                            <button onclick="downloadContent('criminal-complaint-redacted.pdf')" 
+                            <button onclick="downloadContent('Criminal complaint, warrant, etc_3.26.25.pdf')" 
                                     class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
                                 <i class="fas fa-download mr-1"></i> Download
                             </button>
@@ -466,7 +466,7 @@
                                         class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
                                     <i class="fas fa-eye mr-1"></i> Full Transcript
                                 </button>
-                                <button onclick="downloadContent('preliminary-hearing-notes.pdf')" 
+                                <button onclick="downloadContent('Transcripts from 8-28-2024.pdf')" 
                                         class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
                                     <i class="fas fa-download mr-1"></i> Case Notes
                                 </button>
@@ -528,7 +528,7 @@
                                         class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
                                     <i class="fas fa-eye mr-1"></i> Full Analysis
                                 </button>
-                                <button onclick="downloadContent('arraignment-transcript.pdf')" 
+                                <button onclick="downloadContent('Griffin_MdjDocketSheet.pdf')" 
                                         class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
                                     <i class="fas fa-download mr-1"></i> Court Record
                                 </button>
@@ -735,7 +735,7 @@
                                         class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
                                     <i class="fas fa-eye mr-1"></i> Key Excerpts
                                 </button>
-                                <button onclick="downloadContent('Grazier_Hearing_Transcript_2-24-2025.pdf')" 
+                                <button onclick="downloadContent('TRANSCRIPT FROM 2.24.25.pdf')" 
                                         class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
                                     <i class="fas fa-download mr-1"></i> Full Transcript
                                 </button>
@@ -806,7 +806,7 @@
                                         class="bg-burgundy text-white px-4 py-2 rounded hover:bg-red-800 transition-colors">
                                     <i class="fas fa-eye mr-1"></i> Legal Analysis
                                 </button>
-                                <button onclick="downloadContent('commitment-canceled-motion.pdf')" 
+                                <button onclick="downloadContent('Holefelder_MdjDocketSheet.pdf')" 
                                         class="bg-slate-blue text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors">
                                     <i class="fas fa-download mr-1"></i> Motion Filed
                                 </button>
@@ -2042,24 +2042,19 @@
 
         // Download functionality
         function downloadContent(filename) {
-            // Map all available documents with explicit paths
+            // Map all available documents - PDFs are in root directory on GitHub Pages
             const availableFiles = {
-                // Original Griffin court documents
-                'griffin-docket-sheet-original.pdf': './assets/documents/griffin-docket-sheet-original.pdf',
-                'criminal-complaint-original.pdf': './assets/documents/criminal-complaint-warrant-original.pdf',
-                'criminal-complaint-warrant-original.pdf': './assets/documents/criminal-complaint-warrant-original.pdf',
+                // Court Documents (PDFs are now in assets/ directory)
+                'Brennan_CpDocketSheet.pdf': 'assets/Brennan_CpDocketSheet.pdf',
+                'Criminal complaint, warrant, etc_3.26.25.pdf': 'assets/Criminal complaint, warrant, etc_3.26.25.pdf',
+                'Griffin_MdjDocketSheet.pdf': 'assets/Griffin_MdJDocketSheet.pdf',
+                'Holefelder_MdjDocketSheet.pdf': 'assets/Holefelder_MdJDocketSheet.pdf',
+                'TRANSCRIPT FROM 2.24.25.pdf': 'assets/TRANSCRIPT FROM 2.24.25.pdf',
+                'Transcripts from 8-28-2024.pdf': 'assets/Transcripts from 8-28-2024.pdf',
                 
-                // New Holefelder court documents  
-                'Holefelder_MdjDocketSheet.pdf': './assets/documents/Holefelder_MdjDocketSheet.pdf',
-                'Transcripts_from_8-28-2024.pdf': './assets/documents/Transcripts_from_8-28-2024.pdf',
-                
-                // Common Pleas court documents
-                'Brennan_CpDocketSheet.pdf': './assets/documents/Brennan_CpDocketSheet.pdf',
-                'Grazier_Hearing_Transcript_2-24-2025.pdf': './assets/documents/Grazier_Hearing_Transcript_2-24-2025.pdf',
-                
-                // Map redacted requests to actual available files
-                'griffin-docket-sheet-redacted.pdf': './assets/documents/griffin-docket-sheet-original.pdf',
-                'criminal-complaint-redacted.pdf': './assets/documents/criminal-complaint-warrant-original.pdf'
+                // Alternative names that might be referenced
+                'Transcripts_from_8-28-2024.pdf': 'assets/Transcripts from 8-28-2024.pdf',
+                'Grazier_Hearing_Transcript_2-24-2025.pdf': 'assets/TRANSCRIPT FROM 2.24.25.pdf'
             };
             
             // Check if file is available
