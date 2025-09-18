@@ -1,1 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reality Check Blog | Redbeards Remedy</title>
+    <meta name="description" content="Unfiltered reality checks on pseudolegal theories, constitutional law insights, and real courtroom experiences. No BS, just facts.">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#8B1538">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'burgundy': '#8B1538',
+                        'gold': '#FFD700',
+                        'charcoal': '#36454F',
+                        'slate-blue': '#6B73FF'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="font-inter bg-gray-50 text-gray-900">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Mobile menu button -->
+            <div class="md:hidden absolute left-4 top-4 z-10">
+                <button id="mobile-menu-btn" class="text-charcoal hover:text-burgundy">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center h-20 md:h-16">
+                <!-- Centered Logo -->
+                <div class="flex-shrink-0 flex items-center justify-center w-full md:w-auto mb-2 md:mb-0">
+                    <a href="index.html" class="flex items-center">
+                        <img src="assets/images/redbeard-logo.png" alt="Redbeards Remedy Logo" class="h-10 w-auto mr-3">
+                        <span class="text-xl font-bold text-burgundy">Redbeards Remedy</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex md:ml-auto space-x-8">
+                    <a href="index.html" class="text-charcoal hover:text-burgundy px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="content-gallery.html" class="text-charcoal hover:text-burgundy px-3 py-2 text-sm font-medium">Content Gallery</a>
+                    <a href="reality-check-blog.html" class="text-burgundy px-3 py-2 text-sm font-medium border-b-2 border-burgundy">Reality Check</a>
+                    <a href="civil-law-misconceptions.html" class="text-charcoal hover:text-burgundy px-3 py-2 text-sm font-medium">Civil Law Reality</a>
+                    <a href="education.html" class="text-charcoal hover:text-burgundy px-3 py-2 text-sm font-medium">Education</a>
+                    <a href="resources.html" class="text-charcoal hover:text-burgundy px-3 py-2 text-sm font-medium">Resources</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 pb-4">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="index.html" class="block px-3 py-2 text-charcoal hover:text-burgundy">Home</a>
+                    <a href="content-gallery.html" class="block px-3 py-2 text-charcoal hover:text-burgundy">Content Gallery</a>
+                    <a href="reality-check-blog.html" class="block px-3 py-2 text-burgundy font-medium">Reality Check</a>
+                    <a href="civil-law-misconceptions.html" class="block px-3 py-2 text-charcoal hover:text-burgundy">Civil Law Reality</a>
+                    <a href="education.html" class="block px-3 py-2 text-charcoal hover:text-burgundy">Education</a>
+                    <a href="resources.html" class="block px-3 py-2 text-charcoal hover:text-burgundy">Resources</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-burgundy via-red-800 to-red-900 text-white pt-20 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    <i class="fas fa-skull-crossbones text-gold mr-4"></i>
+                    Reality Check Blog
+                </h1>
+                <p class="text-xl md:text-2xl text-red-100 mb-8 max-w-4xl mx-auto">
+                    Unfiltered reality checks on pseudolegal theories, constitutional law insights, and real courtroom experiences. 
+                    <span class="text-gold font-semibold">No BS, just facts.</span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button id="new-post-btn" class="bg-gold text-burgundy px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
+                        <i class="fas fa-plus mr-2"></i>New Reality Check
+                    </button>
+                    <button id="admin-panel-btn" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-burgundy transition-colors">
+                        <i class="fas fa-cog mr-2"></i>Admin Panel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Search and Filter Bar -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="flex flex-col md:flex-row gap-4 items-center">
+                <div class="flex-1">
+                    <div class="relative">
+                        <input type="text" id="search-posts" placeholder="Search reality checks..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-burgundy focus:border-transparent">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <select id="category-filter" class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-burgundy focus:border-transparent">
+                        <option value="">All Categories</option>
+                        <option value="Reality Check">Reality Check</option>
+                        <option value="Court Analysis">Court Analysis</option>
+                        <option value="Constitutional Law">Constitutional Law</option>
+                        <option value="Pseudolegal Debunking">Pseudolegal Debunking</option>
+                        <option value="Case Study">Case Study</option>
+                    </select>
+                    <button id="featured-only" class="bg-burgundy text-white px-4 py-2 rounded-lg hover:bg-red-800 transition-colors">
+                        <i class="fas fa-star mr-2"></i>Featured Only
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Posts -->
+        <div id="featured-posts" class="mb-12">
+            <h2 class="text-3xl font-bold text-charcoal mb-6">
+                <i class="fas fa-fire text-gold mr-3"></i>Featured Reality Checks
+            </h2>
+            <div id="featured-posts-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Featured posts will be loaded here -->
+            </div>
+        </div>
+
+        <!-- All Posts -->
+        <div id="all-posts">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-3xl font-bold text-charcoal">
+                    <i class="fas fa-blog text-burgundy mr-3"></i>All Reality Checks
+                </h2>
+                <div class="flex items-center gap-4">
+                    <span class="text-gray-600">Sort by:</span>
+                    <select id="sort-posts" class="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-burgundy focus:border-transparent">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="most-viewed">Most Viewed</option>
+                        <option value="title">Title A-Z</option>
+                    </select>
+                </div>
+            </div>
+            <div id="blog-posts-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog posts will be loaded here -->
+            </div>
+        </div>
+
+        <!-- Load More Button -->
+        <div class="text-center mt-12">
+            <button id="load-more" class="bg-burgundy text-white px-8 py-3 rounded-lg hover:bg-red-800 transition-colors">
+                <i class="fas fa-arrow-down mr-2"></i>Load More Posts
+            </button>
+        </div>
+
+    </main>
+
+    <!-- New Post Modal -->
+    <div id="new-post-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6 border-b border-gray-200">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-xl font-bold text-charcoal">New Reality Check Post</h3>
+                        <button id="close-post-modal" class="text-gray-400 hover:text-gray-600">
+                            <i class="fas fa-times text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+                <form id="new-post-form" class="p-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Post Title</label>
+                            <input type="text" id="post-title" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-burgundy focus:border-transparent" placeholder="Reality Check: [Your Topic]">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                            <select id="post-category" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-burgundy focus:border-transparent">
+                                <option value="">Select Category</option>
+                                <option value="Reality Check">Reality Check</option>
+                                <option value="Court Analysis">Court Analysis</option>
+                                <option value="Constitutional Law">Constitutional Law</option>
+                                <option value="Pseudolegal Debunking">Pseudolegal Debunking</option>
+                                <option value="Case Study">Case Study</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Tags (comma-separated)</label>
+                            <input type="text" id="post-tags" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-burgundy focus:border-transparent" placeholder="sovereign citizen, court case, constitutional">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Excerpt</label>
+                            <textarea id="post-excerpt" rows="3" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-burgundy focus:border-transparent" placeholder="Brief summary for preview..."></textarea>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Content</label>
+                            <textarea id="post-content" rows="12" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-burgundy focus:border-transparent" placeholder="Write your reality check here..."></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Featured Image URL</label>
+                            <input type="url" id="post-image" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-burgundy focus:border-transparent" placeholder="https://example.com/image.jpg">
+                        </div>
+                        <div class="flex items-center space-x-6">
+                            <label class="flex items-center">
+                                <input type="checkbox" id="post-published" class="rounded border-gray-300 text-burgundy focus:ring-burgundy">
+                                <span class="ml-2 text-sm text-gray-700">Publish immediately</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" id="post-featured" class="rounded border-gray-300 text-burgundy focus:ring-burgundy">
+                                <span class="ml-2 text-sm text-gray-700">Feature this post</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="flex justify-end space-x-4 mt-6">
+                        <button type="button" id="save-draft" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600 transition-colors">
+                            Save as Draft
+                        </button>
+                        <button type="submit" class="bg-burgundy text-white px-6 py-2 rounded-lg hover:bg-red-800 transition-colors">
+                            <i class="fas fa-save mr-2"></i>Publish Post
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="assets/images/redbeard-logo.png" alt="Redbeards Remedy Logo" class="h-10 w-auto mr-3">
+                        <span class="text-xl font-bold">Redbeards Remedy</span>
+                    </div>
+                    <p class="text-gray-300 mb-4">
+                        Teaching the difference between effective constitutional law and failed sovereign citizen tactics through real courtroom experience.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-gold">Home</a></li>
+                        <li><a href="content-gallery.html" class="text-gray-300 hover:text-gold">Content Gallery</a></li>
+                        <li><a href="reality-check-blog.html" class="text-gray-300 hover:text-gold">Reality Check Blog</a></li>
+                        <li><a href="education.html" class="text-gray-300 hover:text-gold">Education</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="legal-disclaimer.html" class="text-gray-300 hover:text-gold">Legal Disclaimer</a></li>
+                        <li><a href="privacy.html" class="text-gray-300 hover:text-gold">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="text-gray-300 hover:text-gold">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-300">&copy; 2025 Redbeards Remedy. All rights reserved. Educational content only - not legal advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/chat-system.js"></script>
+    <script src="js/pwa-features.js"></script>
+    <script src="js/blog.js"></script>
+</body>
+</html>
