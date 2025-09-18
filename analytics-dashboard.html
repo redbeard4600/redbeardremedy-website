@@ -1,1 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard | Redbeards Remedy</title>
+    <meta name="description" content="Track website performance, user engagement, and content effectiveness for Redbeards Remedy legal education platform.">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <meta name="theme-color" content="#8B1538">
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'burgundy': '#8B1538',
+                        'gold': '#FFD700',
+                        'charcoal': '#36454F',
+                        'slate-blue': '#6B73FF'
+                    },
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="font-inter bg-gray-50 text-gray-900">
+    
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Mobile menu button -->
+            <div class="md:hidden absolute left-4 top-4 z-10">
+                <button id="mobile-menu-btn" class="text-charcoal hover:text-burgundy">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center h-20 md:h-16">
+                <!-- Centered Logo -->
+                <div class="flex-shrink-0 flex items-center justify-center w-full md:w-auto mb-2 md:mb-0">
+                    <a href="index.html" class="flex items-center">
+                        <img src="assets/images/redbeard-logo.png" alt="Redbeards Remedy Logo" class="h-10 w-auto mr-3">
+                        <span class="text-xl font-bold text-burgundy">Redbeards Remedy</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex md:ml-auto space-x-8">
+                    <a href="index.html" class="text-charcoal hover:text-burgundy px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="content-gallery.html" class="text-charcoal hover:text-burgundy px-3 py-2 text-sm font-medium">Content Gallery</a>
+                    <a href="reality-check-blog.html" class="text-charcoal hover:text-burgundy px-3 py-2 text-sm font-medium">Reality Check</a>
+                    <a href="analytics-dashboard.html" class="text-burgundy px-3 py-2 text-sm font-medium border-b-2 border-burgundy">Analytics</a>
+                    <a href="education.html" class="text-charcoal hover:text-burgundy px-3 py-2 text-sm font-medium">Education</a>
+                    <a href="resources.html" class="text-charcoal hover:text-burgundy px-3 py-2 text-sm font-medium">Resources</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-200 pb-4">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="index.html" class="block px-3 py-2 text-charcoal hover:text-burgundy">Home</a>
+                    <a href="content-gallery.html" class="block px-3 py-2 text-charcoal hover:text-burgundy">Content Gallery</a>
+                    <a href="reality-check-blog.html" class="block px-3 py-2 text-charcoal hover:text-burgundy">Reality Check</a>
+                    <a href="analytics-dashboard.html" class="block px-3 py-2 text-burgundy font-medium">Analytics</a>
+                    <a href="education.html" class="block px-3 py-2 text-charcoal hover:text-burgundy">Education</a>
+                    <a href="resources.html" class="block px-3 py-2 text-charcoal hover:text-burgundy">Resources</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-charcoal via-gray-800 to-slate-900 text-white pt-20 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    <i class="fas fa-chart-line text-gold mr-4"></i>
+                    Analytics Dashboard
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                    Track website performance, user engagement, and content effectiveness. 
+                    <span class="text-gold font-semibold">Data-driven legal education.</span>
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button id="refresh-data" class="bg-gold text-charcoal px-8 py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
+                        <i class="fas fa-sync mr-2"></i>Refresh Data
+                    </button>
+                    <button id="export-data" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-charcoal transition-colors">
+                        <i class="fas fa-download mr-2"></i>Export Report
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-time Stats Bar -->
+    <div class="bg-white shadow-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div id="realtime-users" class="text-2xl font-bold text-green-500">--</div>
+                    <div class="text-sm text-gray-500">Active Users</div>
+                </div>
+                <div class="text-center">
+                    <div id="today-visitors" class="text-2xl font-bold text-blue-500">--</div>
+                    <div class="text-sm text-gray-500">Today's Visitors</div>
+                </div>
+                <div class="text-center">
+                    <div id="today-pageviews" class="text-2xl font-bold text-purple-500">--</div>
+                    <div class="text-sm text-gray-500">Page Views</div>
+                </div>
+                <div class="text-center">
+                    <div id="bounce-rate" class="text-2xl font-bold text-orange-500">--</div>
+                    <div class="text-sm text-gray-500">Bounce Rate</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <!-- Key Metrics Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            
+            <!-- Total Visitors -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="p-3 bg-blue-100 rounded-lg">
+                        <i class="fas fa-users text-blue-500 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-sm font-medium text-gray-500">Total Visitors</h3>
+                        <p id="total-visitors" class="text-2xl font-bold text-gray-900">--</p>
+                        <p id="visitors-change" class="text-sm text-green-500">--</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Views -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="p-3 bg-green-100 rounded-lg">
+                        <i class="fas fa-eye text-green-500 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-sm font-medium text-gray-500">Total Page Views</h3>
+                        <p id="total-pageviews" class="text-2xl font-bold text-gray-900">--</p>
+                        <p id="pageviews-change" class="text-sm text-green-500">--</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Posts -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="p-3 bg-purple-100 rounded-lg">
+                        <i class="fas fa-blog text-purple-500 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-sm font-medium text-gray-500">Blog Posts</h3>
+                        <p id="total-posts" class="text-2xl font-bold text-gray-900">--</p>
+                        <p id="posts-change" class="text-sm text-green-500">--</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Sessions -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="flex items-center">
+                    <div class="p-3 bg-orange-100 rounded-lg">
+                        <i class="fas fa-comments text-orange-500 text-xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="text-sm font-medium text-gray-500">Chat Sessions</h3>
+                        <p id="total-chats" class="text-2xl font-bold text-gray-900">--</p>
+                        <p id="chats-change" class="text-sm text-green-500">--</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            
+            <!-- Visitors Chart -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                    <i class="fas fa-chart-area text-blue-500 mr-2"></i>
+                    Visitors Over Time
+                </h3>
+                <div style="height: 300px;">
+                    <canvas id="visitorsChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Page Views Chart -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                    <i class="fas fa-chart-line text-green-500 mr-2"></i>
+                    Page Views Trend
+                </h3>
+                <div style="height: 300px;">
+                    <canvas id="pageViewsChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Performance -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            
+            <!-- Top Pages -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                    <i class="fas fa-star text-gold mr-2"></i>
+                    Top Pages
+                </h3>
+                <div id="top-pages-list" class="space-y-3">
+                    <div class="animate-pulse">
+                        <div class="h-4 bg-gray-200 rounded w-3/4 mb-2"></div>
+                        <div class="h-3 bg-gray-200 rounded w-1/2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Device Types -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                    <i class="fas fa-mobile-alt text-purple-500 mr-2"></i>
+                    Device Types
+                </h3>
+                <div style="height: 250px;">
+                    <canvas id="deviceChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Countries -->
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                    <i class="fas fa-globe text-burgundy mr-2"></i>
+                    Top Countries
+                </h3>
+                <div id="countries-list" class="space-y-3">
+                    <div class="animate-pulse">
+                        <div class="h-4 bg-gray-200 rounded w-2/3 mb-2"></div>
+                        <div class="h-3 bg-gray-200 rounded w-1/3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Performance -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                <i class="fas fa-blog text-burgundy mr-2"></i>
+                Blog Performance
+            </h3>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Post Title</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Views</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Published</th>
+                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="blog-performance-table" class="bg-white divide-y divide-gray-200">
+                        <!-- Blog data will be loaded here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Chat Analytics -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                <i class="fas fa-comments text-orange-500 mr-2"></i>
+                Chat Analytics
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                    <div id="avg-chat-duration" class="text-2xl font-bold text-orange-500">--</div>
+                    <div class="text-sm text-gray-500">Avg Duration</div>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                    <div id="chat-satisfaction" class="text-2xl font-bold text-green-500">--</div>
+                    <div class="text-sm text-gray-500">Satisfaction</div>
+                </div>
+                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                    <div id="popular-topics" class="text-lg font-semibold text-blue-500">--</div>
+                    <div class="text-sm text-gray-500">Popular Topic</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center mb-4">
+                    <img src="assets/images/redbeard-logo.png" alt="Redbeards Remedy Logo" class="h-10 w-auto mr-3">
+                    <span class="text-xl font-bold">Redbeards Remedy Analytics</span>
+                </div>
+                <p class="text-gray-300 mb-4">
+                    Data-driven insights for legal education platform performance
+                </p>
+                <p class="text-gray-400 text-sm">
+                    Analytics data updated in real-time • Privacy-focused tracking
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/chat-system.js"></script>
+    <script src="js/pwa-features.js"></script>
+    <script src="js/analytics-dashboard.js"></script>
+</body>
+</html>
